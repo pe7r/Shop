@@ -1,11 +1,14 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 const Category = () => {
-    return <section>
+    return (
+        <section>
             <h1> Category </h1>
-            <a href="/"> Homepage </a>
-            <a href="/category"> Category </a>
+            <NavLink to="/"> Homepage </NavLink>
+            <NavLink to="/category"> Category </NavLink>
         </section>
+    )
 }
 
 export default Category
