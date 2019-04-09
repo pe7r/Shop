@@ -25,6 +25,7 @@ class Category extends React.Component {
             description={product.description}
             key={product.id}
             image={product.mediaCollection[0].thumbUrl}
+            price={product.pricing.label}
             />)
 
         return (
