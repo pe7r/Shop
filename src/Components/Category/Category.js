@@ -1,7 +1,9 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import axios from 'axios'
-import Product from '../Product'
+import Product from '../Product/Product'
+
+import './Category.css'
 
 class Category extends React.Component {
     state = {
@@ -9,7 +11,7 @@ class Category extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://qa-api.wovenlyrugs.com/products?page=1&page_size=35&size=runners&group=Rug')
+        axios.get('https://qa-api.wovenlyrugs.com/products?page=1&page_size=12&size=runners&group=Rug')
         .then(response => {
             console.log(response)
             this.setState({ products: response.data.result.data })
