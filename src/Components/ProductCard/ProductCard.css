@@ -1,0 +1,25 @@
+.productcard {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.productcard__image {
+    display: inline-block;
+}
+
+.productcard__title {
+    display: inline-block;
+}
+
+.productcard__price {
+    display: inline-block;
+}
+
+.productcard__colors {
+    display: inline-block;
+}

@@ -8,7 +8,7 @@ const Homepage = () => {
         <header>
             <h1> Homepage </h1>
             <NavLink to="/"> Homepage </NavLink>
-            <NavLink to="/category"> Category </NavLink>
+            <NavLink to="/products"> Products </NavLink>
         </header>
     )
 }

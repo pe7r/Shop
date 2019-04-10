@@ -1,11 +1,11 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import axios from 'axios'
-import Product from '../Product/Product'
+import ProductCard from '../ProductCard/ProductCard'
 
-import './Category.css'
+import './Products.css'
 
-class Category extends React.Component {
+class Products extends React.Component {
     state = {
         products: []
     }
@@ -20,7 +20,7 @@ class Category extends React.Component {
 
     render() {
 
-        const productList = this.state.products.map(product => <Product 
+        const productList = this.state.products.map(product => <ProductCard 
             title={product.title}
             description={product.description}
             key={product.id}
@@ -30,13 +30,15 @@ class Category extends React.Component {
 
         return (
             <section>
-                <h1> Category </h1>
+                <h1> Products </h1>
                 <NavLink to="/"> Homepage </NavLink>
-                <NavLink to="/category"> Category </NavLink>
+                <NavLink to="/products"> Products </NavLink>
+                <section className="product-list">
                 { productList }
+                </section>
             </section>
         )
     }
 }
 
-export default Category
+export default Products
