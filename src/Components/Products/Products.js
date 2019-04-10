@@ -30,9 +30,9 @@ class Products extends React.Component {
 
         return (
             <section>
-                <h1> Category </h1>
+                <h1> Products </h1>
                 <NavLink to="/"> Homepage </NavLink>
-                <NavLink to="/category"> Products </NavLink>
+                <NavLink to="/products"> Products </NavLink>
                 <section className="product-list">
                 { productList }
                 </section>
