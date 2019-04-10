@@ -33,7 +33,9 @@ class Products extends React.Component {
                 <h1> Category </h1>
                 <NavLink to="/"> Homepage </NavLink>
                 <NavLink to="/category"> Products </NavLink>
+                <section className="product-list">
                 { productList }
+                </section>
             </section>
         )
     }
