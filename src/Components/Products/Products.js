@@ -35,7 +35,8 @@ class Products extends React.Component {
             )
 
         return (
-            <section className='products__body'>
+            <div>
+            <section className='products__content'>
                 <header className='products__header'>
                     <h1> Products </h1>
                     <NavLink to="/"> Homepage </NavLink>
@@ -47,6 +48,7 @@ class Products extends React.Component {
                     </div>
                 </div>
             </section>
+            </div>
         )
     }
 }
