@@ -6,6 +6,9 @@
 
 .productcard__image {
     display: flex;
+    align-self: center;
+    padding-top: 10px;
+    height: 230px;
 }
 
 .productcard__title {

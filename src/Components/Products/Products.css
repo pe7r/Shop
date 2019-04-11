@@ -16,7 +16,6 @@
 .products__row {
     display: flex;
     flex-wrap: wrap;
-    background-color: #000;
     width: 1280px;
     justify-content: space-between;
 }
