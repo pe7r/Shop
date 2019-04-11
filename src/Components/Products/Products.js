@@ -33,9 +33,33 @@ class Products extends React.Component {
                 <h1> Products </h1>
                 <NavLink to="/"> Homepage </NavLink>
                 <NavLink to="/products"> Products </NavLink>
-                <section className="product-list">
-                { productList }
-                </section>
+                <div className="products">
+                    <div className="products__row">
+                        <div className="productcard">
+                            <div className="productcard__image">
+                                <img src='https://www.logolynx.com/images/logolynx/43/430c07f27af3fda19373042528edbe3d.jpeg' alt="product" />
+                            </div>			
+                            <div className="productcard__title">
+                                <h4> Name of product </h4>
+                            </div>
+                            <div className="productcard__price">
+                                <p> Price of product </p>
+                            </div>
+                            <div className="productcard__colors">
+                                <p> Colors here </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="products__row">
+                        <ProductCard />
+                    </div>
+                    <div className="products__row">
+                        <ProductCard />
+                    </div>
+                    <div className="products__row">
+                        <ProductCard />
+                    </div>
+                </div>
             </section>
         )
     }

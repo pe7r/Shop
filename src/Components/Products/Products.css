@@ -1,4 +1,12 @@
-.product-list {
+.products{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.products__row {
+    background-color: red;
+    height: 400px;
+    width: 20%;
+    margin-right: 22px;
 }

@@ -1,25 +1,26 @@
 .productcard {
     display: flex;
     flex-direction: column;
-    width: 20%;
     border-style: solid;
-    border-color: grey;
+    border-color: rgb(235, 227, 227);
     border-radius: 10px;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
 }
 
 .productcard__image {
-    display: inline-block;
+    display: flex;
+    align-self: center;
 }
 
 .productcard__title {
-    display: inline-block;
+    display: flex;
 }
 
 .productcard__price {
-    display: inline-block;
+    display: flex;
 }
 
 .productcard__colors {
-    display: inline-block;
+    display: flex;
 }

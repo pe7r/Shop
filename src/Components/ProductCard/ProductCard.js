@@ -9,13 +9,13 @@ const ProductCard = (props) => {
                 <img src={props.image} alt="product" />
             </div>			
             <div className="productcard__title">
-            <h2> { props.title } </h2>
+            <h4> { props.title } </h4>
             </div>
             <div className="productcard__price">
-            <h3> { props.price } </h3>
+            <p> { props.price } </p>
             </div>
             <div className="productcard__colors">
-            <h3> Colors here </h3>
+            <p> Colors here </p>
             </div>
 		</div>
     )
