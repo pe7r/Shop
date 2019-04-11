@@ -1,10 +1,9 @@
 .productcard {
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-color: rgb(235, 227, 227);
-    border-radius: 10px;
     align-items: flex-start;
+    width: 100%;
+    height: 100%;
 }
 
 .productcard__image {
