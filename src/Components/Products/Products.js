@@ -20,44 +20,30 @@ class Products extends React.Component {
 
     render() {
 
-        const productList = this.state.products.map(product => <ProductCard 
-            title={product.title}
-            description={product.description}
-            key={product.id}
-            image={product.mediaCollection[0].thumbUrl}
-            price={product.pricing.label}
-            />)
+        const productList = this.state.products.map(product => 
+        
+            <div className="products__col" key={product.id}>
+                <ProductCard 
+                    title={product.title}
+                    description={product.description}
+                    key={product.id}
+                    image={product.mediaCollection[0].thumbUrl}
+                    price={product.pricing.label}
+                    /> 
+            </div>
+        
+            )
 
         return (
-            <section>
-                <h1> Products </h1>
-                <NavLink to="/"> Homepage </NavLink>
-                <NavLink to="/products"> Products </NavLink>
-                <div className="products">
+            <section className='products__body'>
+                <header className='products__header'>
+                    <h1> Products </h1>
+                    <NavLink to="/"> Homepage </NavLink>
+                    <NavLink to="/products"> Products </NavLink>
+                </header>
+                <div className="products__list">
                     <div className="products__row">
-                        <div className="productcard">
-                            <div className="productcard__image">
-                                <img src='https://www.logolynx.com/images/logolynx/43/430c07f27af3fda19373042528edbe3d.jpeg' alt="product" />
-                            </div>			
-                            <div className="productcard__title">
-                                <h4> Name of product </h4>
-                            </div>
-                            <div className="productcard__price">
-                                <p> Price of product </p>
-                            </div>
-                            <div className="productcard__colors">
-                                <p> Colors here </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="products__row">
-                        <ProductCard />
-                    </div>
-                    <div className="products__row">
-                        <ProductCard />
-                    </div>
-                    <div className="products__row">
-                        <ProductCard />
+                        { productList }
                     </div>
                 </div>
             </section>

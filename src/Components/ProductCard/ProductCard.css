@@ -5,12 +5,10 @@
     border-color: rgb(235, 227, 227);
     border-radius: 10px;
     align-items: flex-start;
-    margin-bottom: 10px;
 }
 
 .productcard__image {
     display: flex;
-    align-self: center;
 }
 
 .productcard__title {

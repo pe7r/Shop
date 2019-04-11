@@ -1,12 +1,23 @@
-.products{
+.products__body {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.products__header {
+    display: flex;
 }
 
 .products__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.products__col {
     background-color: red;
-    height: 400px;
-    width: 20%;
-    margin-right: 22px;
+    height: 300px;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-right: 10px; 
 }
