@@ -25,13 +25,14 @@
     padding-top: 5px;
 }
 
-.productcard__title h4 {
-    word-wrap: break-word;
+.productcard__price {
+    display: inline-block;
+    padding-top: 13px;
 }
 
-.productcard__price {
-    display: flex;
-    padding-top: 13px;
+.productcard__old-price {
+    display: inline-block;
+    text-decoration: line-through;
 }
 
 .productcard__colors {
