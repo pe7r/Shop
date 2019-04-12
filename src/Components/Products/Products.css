@@ -23,7 +23,7 @@
 .products__col {
     display: flex;
     flex-direction: column;
-    height: 399px;
+    min-height: 399px;
     width: 23.7%;
     margin-bottom: 20px;
     border-style: solid;
