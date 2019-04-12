@@ -17,7 +17,7 @@ const ProductCard = (props) => {
                     <div> <div className="productcard__old-price"> ${Math.round(props.oldPrice / 100)} </div> { props.price } </div>
                 </div>
                 <div className="productcard__colors">                   
-                        <div className="colors__border"><span class="colors__dot"></span></div>
+                        <span class="colors__dot"></span>
                         <span class="colors__dot"></span>
                         <span class="colors__dot"></span>
                         <span class="colors__dot"></span>
