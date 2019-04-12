@@ -7,12 +7,26 @@
 .productcard__image {
     display: flex;
     align-self: center;
-    padding-top: 10px;
+    padding: 10px;
     height: 230px;
+}
+
+.productcard__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 151px;
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 .productcard__title {
     display: flex;
+    align-self: flex-start;
+}
+
+.productcard__title h4 {
+    word-wrap: break-word;
 }
 
 .productcard__price {
