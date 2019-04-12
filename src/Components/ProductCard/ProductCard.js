@@ -16,7 +16,7 @@ const ProductCard = (props) => {
                     <div> { props.price } </div>
                 </div>
                 <div className="productcard__colors">                   
-                        <span class="colors__dot"></span>
+                        <div><span class="colors__dot"></span></div>
                         <span class="colors__dot"></span>
                         <span class="colors__dot"></span>
                         <span class="colors__dot"></span>

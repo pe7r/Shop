@@ -22,6 +22,7 @@
 .productcard__title {
     display: flex;
     align-self: flex-start;
+    padding-top: 5px;
 }
 
 .productcard__title h4 {
@@ -30,6 +31,7 @@
 
 .productcard__price {
     display: flex;
+    padding-top: 13px;
 }
 
 .productcard__colors {
@@ -46,4 +48,13 @@
     background-color: black;
     border-radius: 50%;
     margin-right: 10.3px;
+    border: 1px solid red;
+}
+
+.colors__border {
+    border: 2px solid grey;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border-spacing: 20px;
 }
