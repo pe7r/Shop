@@ -29,6 +29,7 @@ class Products extends React.Component {
                     key={product.id}
                     image={product.mediaCollection[0].thumbUrl}
                     price={product.pricing.label}
+                    oldPrice={product.pricing.listPrice.amount}
                     /> 
             </div>
         

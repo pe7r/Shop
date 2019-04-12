@@ -3,19 +3,27 @@ import React from 'react'
 import './ProductCard.css'
 
 const ProductCard = (props) => {
+
     return (
         <div className="productcard">
 			<div className="productcard__image">
                 <img src={props.image} alt="product" />
-            </div>			
-            <div className="productcard__title">
-                <h4> { props.title } </h4>
             </div>
-            <div className="productcard__price">
-                <p> { props.price } </p>
-            </div>
-            <div className="productcard__colors">
-                <p> Colors here </p>
+            <div className="productcard__info">			
+                <div className="productcard__title">
+                    <div> <b>{ props.title }</b> </div>
+                </div>
+                <div className="productcard__price">
+                    <div> <div className="productcard__old-price"> ${Math.round(props.oldPrice / 100)} </div> { props.price } </div>
+                </div>
+                <div className="productcard__colors">                   
+                        <span class="colors__dot"></span>
+                        <span class="colors__dot"></span>
+                        <span class="colors__dot"></span>
+                        <span class="colors__dot"></span>
+                        <span class="colors__dot"></span>
+                        <span class="colors__dot"></span>
+                </div>
             </div>
 		</div>
     )

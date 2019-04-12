@@ -21,12 +21,13 @@
 }
 
 .products__col {
-    background-color: red;
-    height: 399px;
+    display: flex;
+    flex-direction: column;
+    min-height: 399px;
     width: 23.7%;
     margin-bottom: 20px;
     border-style: solid;
     border-width: 1px;
     border-color: rgb(235, 227, 227);
-    border-radius: 4px;
+    border-radius: 4px;   
 }
