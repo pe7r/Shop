@@ -10,13 +10,13 @@ const ProductCard = (props) => {
             </div>
             <div className="productcard__info">			
                 <div className="productcard__title">
-                    <div> { props.title } </div>
+                    <div> <b>{ props.title }</b> </div>
                 </div>
                 <div className="productcard__price">
                     <div> { props.price } </div>
                 </div>
                 <div className="productcard__colors">                   
-                        <div><span class="colors__dot"></span></div>
+                        <div className="colors__border"><span class="colors__dot"></span></div>
                         <span class="colors__dot"></span>
                         <span class="colors__dot"></span>
                         <span class="colors__dot"></span>
