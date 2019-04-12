@@ -34,4 +34,14 @@
 
 .productcard__colors {
     display: flex;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+
+.colors__dot {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    background-color: #bbb;
+    border-radius: 50%;
 }
