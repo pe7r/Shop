@@ -16,8 +16,7 @@
     flex-direction: column;
     justify-content: space-around;
     height: 151px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding-left: 20px;
 }
 
 .productcard__title {
