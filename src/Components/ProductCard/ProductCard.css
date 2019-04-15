@@ -23,6 +23,7 @@
     display: flex;
     align-self: flex-start;
     padding-top: 5px;
+    margin-bottom:-5px;
 }
 
 .productcard__price {
@@ -39,7 +40,6 @@
     display: flex;
     justify-content: space-around;
     padding-bottom: 16px;
-    padding-left: 3.8px;
 }
 
 .colors__dot {
@@ -48,6 +48,33 @@
     width: 20px;
     background-color: black;
     border-radius: 50%;
-    margin-right: 10.3px;
-    border: 1px solid red;
+    visibility: visible;
+    }
+    
+
+.colors__border {
+    display: flex;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    border: 1px solid grey;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2.5px;
+    visibility: hidden;
+}
+
+.colors__border:hover {
+    visibility: visible;
+}
+
+.colors__border--active {
+    display: flex;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2.5px;
 }
