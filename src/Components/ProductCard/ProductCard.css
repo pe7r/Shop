@@ -67,3 +67,14 @@
 .colors__border:hover {
     visibility: visible;
 }
+
+.colors__border--active {
+    display: flex;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2.5px;
+}
