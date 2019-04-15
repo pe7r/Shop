@@ -18,22 +18,22 @@ const ProductCard = (props) => {
                 </div>
                 <div className="productcard__colors">
                     <div className="colors__border">
-                        <span class="colors__dot"></span>
+                        <span className="colors__dot"></span>
                     </div>
                     <div className="colors__border">
-                        <span class="colors__dot"></span>
+                        <span className="colors__dot"></span>
                     </div>
                     <div className="colors__border">
-                        <span class="colors__dot"></span>
+                        <span className="colors__dot"></span>
                     </div>
                     <div className="colors__border">
-                        <span class="colors__dot"></span>
+                        <span className="colors__dot"></span>
                     </div>
                     <div className="colors__border">
-                        <span class="colors__dot"></span>
+                        <span className="colors__dot"></span>
                     </div>
                     <div className="colors__border">
-                        <span class="colors__dot"></span>
+                        <span className="colors__dot"></span>
                     </div>
                 </div>
             </div>
