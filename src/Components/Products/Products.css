@@ -31,3 +31,45 @@
     border-color: rgb(235, 227, 227);
     border-radius: 4px;   
 }
+
+@media screen and (max-width: 768px) {
+    .products__col {
+        display: flex;
+        flex-direction: column;
+        min-height: 399px;
+        width: 30%;
+        margin-bottom: 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(235, 227, 227);
+        border-radius: 4px;   
+    }
+
+    .products__row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1280px;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .products__col {
+        display: flex;
+        flex-direction: column;
+        min-height: 399px;
+        width: 40%;
+        margin-bottom: 20px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: rgb(235, 227, 227);
+        border-radius: 4px;   
+    }
+
+    .products__row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1280px;
+        justify-content: space-around;
+    }
+}
