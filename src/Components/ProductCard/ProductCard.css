@@ -7,8 +7,12 @@
 .productcard__image {
     display: flex;
     align-self: center;
-    padding: 10px;
-    height: 230px;
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 228px;
+    width: 50%;
+    margin-top: 10px;
 }
 
 .productcard__info {

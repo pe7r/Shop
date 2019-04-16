@@ -3,11 +3,14 @@ import React from 'react'
 import './ProductCard.css'
 
 const ProductCard = (props) => {
+    const imgStyles = {
+        backgroundImage: `url(${props.image})`
+    }
 
     return (
         <div className="productcard">
-			<div className="productcard__image">
-                <img src={props.image} alt="product" />
+			<div className="productcard__image" style={imgStyles}>
+                
             </div>
             <div className="productcard__info">			
                 <div className="productcard__title">
