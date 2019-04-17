@@ -97,4 +97,13 @@
         margin-top: 13px;
         margin-bottom: 12px;
     }
+
+    .productcard__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 132px;
+        width: 65%;
+        padding-left: 20px;
+    }
 }

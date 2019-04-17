@@ -36,7 +36,7 @@
     .products__col {
         display: flex;
         flex-direction: column;
-        min-height: 399px;
+        min-height: 230px;
         width: 47%;
         margin-bottom: 20px;
         border-style: solid;
