@@ -9,9 +9,7 @@ const ProductCard = (props) => {
 
     return (
         <div className="productcard">
-			<div className="productcard__image" style={imgStyles}>
-                
-            </div>
+                <div className="productcard__image" style={imgStyles}></div>
             <div className="productcard__info">			
                 <div className="productcard__title">
                     <div> <b>{ props.title }</b> </div>
