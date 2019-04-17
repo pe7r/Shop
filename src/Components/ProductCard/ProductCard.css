@@ -102,4 +102,8 @@
         height: 132px;
         width: 65%;
     }
+
+    .productcard {
+        padding: 10px 10px 10px 10px;
+    }
 }
