@@ -9,18 +9,16 @@ const ProductCard = (props) => {
 
     return (
         <div className="productcard">
-			<div className="productcard__image" style={imgStyles}>
-                
-            </div>
+                <div className="productcard__image" style={imgStyles}></div>
             <div className="productcard__info">			
                 <div className="productcard__title">
-                    <div> <b>{ props.title }</b> </div>
+                    <span> <b>{ props.title }</b> </span>
                 </div>
                 <div className="productcard__price">
-                    <div> 
-                        <div className="productcard__old-price"> ${Math.round(props.oldPrice / 100)} </div> 
+                    <span> 
+                        <span className="productcard__old-price"> ${Math.round(props.oldPrice / 100)} </span> 
                         { props.price } 
-                    </div>
+                    </span>
                 </div>
 
                 <div className="productcard__colors">
