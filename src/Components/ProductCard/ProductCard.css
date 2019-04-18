@@ -96,7 +96,8 @@
         flex-direction: column;
         justify-content: space-around;
         height: 112px;
-        width: 65%;
+        width: 100%;
+        font-size: 15px;
     }
 
     .productcard {
