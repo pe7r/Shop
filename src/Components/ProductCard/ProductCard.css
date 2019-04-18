@@ -18,8 +18,8 @@
 .productcard__info {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 121px;
+    justify-content: space-between;
+    height: 111px;
     width: 100%;
     padding: 27px 10px 0px 10px;
 }
