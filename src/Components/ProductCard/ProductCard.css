@@ -142,4 +142,24 @@
     .productcard {
         padding: 10px 10px 10px 10px;
     }
+
+    .productcard__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 73px;
+        width: 100%;
+        font-size: 15px;
+        padding: 14px 0px 10px;
+    }
+
+    .productcard__image {
+        display: flex;
+        align-self: center;
+        background-position: 50% 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 230px;
+        width: 48%;
+    }
 }

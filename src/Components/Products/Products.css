@@ -35,12 +35,12 @@
     border-radius: 4px;   
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 1024px) {
     .products__col {
         display: flex;
         flex-direction: column;
         min-height: 230px;
-        width: 48%;
+        width: 30.8%;
         margin-bottom: 20px;
         border-style: solid;
         border-width: 1px;
@@ -51,18 +51,19 @@
     .products__row {
         display: flex;
         flex-wrap: wrap;
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 1300px;
+        max-width: 1300px;
+        justify-content: space-around;
+        box-sizing: border-box;
+        padding: 0px;
     }
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 767px) {
     .products__col {
         display: flex;
         flex-direction: column;
         min-height: 230px;
-        width: 32.8%;
+        width: 48%;
         margin-bottom: 20px;
         border-style: solid;
         border-width: 1px;
