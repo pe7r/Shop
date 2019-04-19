@@ -137,3 +137,9 @@
         margin-right: 1.5px;
     }
 }
+
+@media (max-width: 1024px) {
+    .productcard {
+        padding: 10px 10px 10px 10px;
+    }
+}
