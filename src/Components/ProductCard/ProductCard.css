@@ -9,10 +9,10 @@
     display: flex;
     align-self: center;
     background-position: 50% 0;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     height: 228px;
-    width: 52%;
+    width: 100%;
 }
 
 .productcard__info {
@@ -95,13 +95,7 @@
     }
 
     .productcard__image {
-        display: flex;
-        align-self: center;
-        background-position: 50% 0;
-        background-size: cover;
-        background-repeat: no-repeat;
         height: 230px;
-        width: 48%;
     }
 
     .productcard__colors {
@@ -115,13 +109,7 @@
     }
 
     .productcard__image {
-        display: flex;
-        align-self: center;
-        background-position: 50% 0;
-        background-size: cover;
-        background-repeat: no-repeat;
         height: 132px;
-        width: 50%;
     }
 
     .productcard__info {
