@@ -51,13 +51,10 @@
 @media screen and (max-width: 767px) {
     .products__col {
         min-height: 230px;
-        width: 46.71%;
-        margin-right: 10px; 
+        width: 50%; 
     }
 
     .products__row {
-        display: flex;
-        flex-wrap: wrap;
         padding-left: 10px;
         padding-right: 0px;
         justify-content: space-around;
