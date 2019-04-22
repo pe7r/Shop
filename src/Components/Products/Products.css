@@ -59,8 +59,6 @@
     }
 
     .products__row {
-        padding-left: 10px;
-        padding-right: 0px;
         justify-content: space-around;
     }
 }
