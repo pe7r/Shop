@@ -32,6 +32,10 @@
 }
 
 @media (max-width: 1024px) {
+    .products__list {
+        padding: 0px;
+    }
+
     .products__col {
         display: flex;
         flex-direction: column;
