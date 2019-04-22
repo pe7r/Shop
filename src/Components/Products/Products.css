@@ -66,14 +66,8 @@
 
 @media (max-width: 374px) {
     .products__col {
-        display: flex;
-        flex-direction: column;
         min-height: 230px;
         width: 65%;
-        margin-bottom: 10px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: rgb(235, 227, 227);
-        border-radius: 4px;   
+        margin-bottom: 20px;
     }
 }
