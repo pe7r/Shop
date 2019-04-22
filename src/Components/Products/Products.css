@@ -11,16 +11,16 @@
 .products__list {
     display: flex;
     justify-content: center;
+    max-width: 1300px;
+    align-self: center;
+    padding: 0 10px;
 }
 
 .products__row {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1300px;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .products__col {
@@ -51,7 +51,6 @@
     .products__row {
         display: flex;
         flex-wrap: wrap;
-        max-width: 1300px;
         justify-content: space-around;
         box-sizing: border-box;
         padding: 0px 10px;
@@ -77,7 +76,6 @@
         flex-wrap: wrap;
         padding-left: 10px;
         padding-right: 0px;
-        width: 1300px;
         justify-content: space-around;
     }
 }
@@ -93,11 +91,5 @@
         border-width: 1px;
         border-color: rgb(235, 227, 227);
         border-radius: 4px;   
-    }
-
-    .products__row {
-        display: flex;
-        flex-wrap: wrap;
-        width: 1300px;
     }
 }
