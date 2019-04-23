@@ -1,11 +1,12 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import SliderPopular from '../Sliders/Popular/SliderPopular'
 
 import './Homepage.css'
 
 const Homepage = () => {
     return (
-        <div>
+        <div className="homepage__container">
             <section className='homepage__content'>
                 <header>
                     <h1> Homepage </h1>
@@ -14,6 +15,7 @@ const Homepage = () => {
                         <NavLink to="/products"> Products </NavLink>
                     </div>
                 </header>
+                <SliderPopular />
             </section>
         </div>
     )
