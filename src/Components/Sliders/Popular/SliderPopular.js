@@ -1,9 +1,24 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-
 import './SliderPopular.css'
+import ProductCard from '../../ProductCard/ProductCard';
 
-const SliderPopular = () => {
+const SliderPopular = (props) => {
+    const productList = props.productsList.map(product => 
+        
+        <div className="products__col" key={product.id}>
+            <ProductCard 
+                title={product.title}
+                description={product.description}
+                key={product.id}
+                image={product.mediaCollection[0].thumbUrl}
+                price={product.pricing.label}
+                oldPrice={product.pricing.listPrice.amount}
+                /> 
+        </div>
+    
+        )
+
     return (
         <div className="slider__content">
             <div className='slider__row'>
@@ -21,7 +36,11 @@ const SliderPopular = () => {
                         </div>
                     </div>
                 </div>
-                <div className="slider__container"></div>
+                <div className="slider__container">
+                    {
+                        productList
+                    }
+                </div>
             </div>
         </div>
     )

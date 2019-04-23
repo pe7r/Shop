@@ -4,7 +4,7 @@ import SliderPopular from '../Sliders/Popular/SliderPopular'
 
 import './Homepage.css'
 
-const Homepage = () => {
+const Homepage = (props) => {
     return (
         <div className="homepage__container">
             <section className='homepage__content'>
@@ -15,7 +15,9 @@ const Homepage = () => {
                         <NavLink to="/products"> Products </NavLink>
                     </div>
                 </header>
-                <SliderPopular />
+                <SliderPopular 
+                    productsList={props.productsList}
+                />
             </section>
         </div>
     )
