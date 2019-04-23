@@ -56,10 +56,13 @@
     .products__col {
         min-height: 230px;
         width: 50%; 
+        padding: 0 5px;
+        margin-bottom: 10px;
     }
 
     .products__row {
         justify-content: space-around;
+        padding: 0 5px;
     }
 }
 
