@@ -1,0 +1,19 @@
+.slider__content {
+    width: 1300px;
+    padding: 0 -10px;
+}
+
+.slider__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider__title {
+    font-size: 34px;
+}
+
+.slider__header {
+    display: flex;
+    justify-content: space-between;
+}
