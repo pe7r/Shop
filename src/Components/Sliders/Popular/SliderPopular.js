@@ -13,7 +13,7 @@ const SliderPopular = () => {
                     </div>
                     <div className="slider__switch">
                         <div className="slider__navlink">
-                            <NavLink to="/products"> See All </NavLink>
+                            <NavLink to="/products" className="navlink"> See All </NavLink>
                         </div>
                         <div className="slider__buttons">
                             <button> Prev </button>
