@@ -1,5 +1,6 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import PropTypes from 'prop-types'
 import './SliderPopular.css'
 import ProductCard from '../../ProductCard/ProductCard';
 
@@ -47,3 +48,7 @@ const SliderPopular = (props) => {
 }
 
 export default SliderPopular
+
+SliderPopular.propTypes = {
+    productsList: PropTypes.array.isRequired,
+};
