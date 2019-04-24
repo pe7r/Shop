@@ -1,0 +1,8 @@
+.homepage__container {
+    display: flex;
+    justify-content: center;
+}
+
+.header__links {
+    margin-bottom: 20px;
+}

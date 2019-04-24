@@ -1,26 +1,14 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
-import axios from 'axios'
 import ProductCard from '../ProductCard/ProductCard'
 
 import './Products.css'
 
 class Products extends React.Component {
-    state = {
-        products: []
-    }
-
-    componentDidMount() {
-        axios.get('https://qa-api.wovenlyrugs.com/products?page=1&page_size=12&size=runners&group=Rug')
-        .then(response => {
-            console.log(response)
-            this.setState({ products: response.data.result.data })
-        })
-    }
-
     render() {
+        console.log(this.props.productsList)
 
-        const productList = this.state.products.map(product => 
+        const productList = this.props.productsList.map(product => 
         
             <div className="products__col" key={product.id}>
                 <ProductCard 
