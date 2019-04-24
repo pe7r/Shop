@@ -6,7 +6,7 @@ import ProductCard from '../../ProductCard/ProductCard';
 const SliderPopular = (props) => {
     const productList = props.productsList.map(product => 
         
-        <div className="products__col" key={product.id}>
+        <div className="slider__col" key={product.id}>
             <ProductCard 
                 title={product.title}
                 description={product.description}

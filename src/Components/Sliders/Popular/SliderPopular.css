@@ -1,5 +1,6 @@
 .slider__content {
-    width: 1300px;   
+    width: 1300px;
+    overflow-x: hidden;   
 }
 
 .slider__header {
@@ -60,4 +61,8 @@
 
 .slider__container {
     display: flex;
+}
+
+.slider__col {
+    min-width: 250px;
 }
