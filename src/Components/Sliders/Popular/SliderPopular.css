@@ -60,12 +60,16 @@
 }
 
 .slider__container {
-    display: flex;
-    width: 100%;
+    display: block;
+    width: 1300px;
     margin-left: -20px;
 }
 
 .slider__col {
     min-width: 200px;
     padding: 10px;
+}
+
+.slider__body {
+    width: 1300px;
 }
