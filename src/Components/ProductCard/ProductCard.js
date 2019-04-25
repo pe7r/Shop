@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './ProductCard.css'
+import './ProductCard.scss'
 
 const ProductCard = (props) => {
     const imgStyles = {
