@@ -1,5 +1,3 @@
-
-
 .productcard {
     display: flex;
     flex-direction: column;
@@ -162,7 +160,12 @@
 }
 
 .productcard.popular {
-    .productcard__info {
-        background-color: limegreen;
+    .productcard__image {
+        height: 148px;
+        margin-top: 6px;
+    }
+
+    .product__info {
+        height: 115px;
     }
 }
