@@ -57,6 +57,7 @@ class SliderPopular extends React.Component {
                                 speed={500}
                                 slidesToShow={6}
                                 slidesToScroll={6}
+                                draggable={false}
                                 ref={c => (this.slider = c)}
                         > 
                                { productList }
