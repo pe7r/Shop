@@ -29,7 +29,7 @@ class SliderPopular extends React.Component {
                     image={product.mediaCollection[0].thumbUrl}
                     price={product.pricing.label}
                     oldPrice={product.pricing.listPrice.amount}
-                    theme={'popular'}
+                    theme='popular'
                     /> 
             </div>
         

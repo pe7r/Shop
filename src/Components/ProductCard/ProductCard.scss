@@ -1,3 +1,5 @@
+
+
 .productcard {
     display: flex;
     flex-direction: column;
@@ -159,6 +161,8 @@
     }
 }
 
-@media (max-width: 374px) {
-    
+.productcard.popular {
+    .productcard__info {
+        background-color: limegreen;
+    }
 }
