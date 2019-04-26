@@ -33,6 +33,15 @@ class SliderPopular extends React.Component {
         
             )
 
+            const settings = {
+                dots: false,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 6,
+                slidesToScroll: 6,
+                draggable: false,
+            }
+
         return (
             <div className="slider__content">
                 <div className='slider__row'>
@@ -51,12 +60,7 @@ class SliderPopular extends React.Component {
                         </div>
                     </div>
                     <div className="slider__container">
-                        <Slider dots={false}
-                                infinite={true}
-                                speed={500}
-                                slidesToShow={6}
-                                slidesToScroll={6}
-                                draggable={false}
+                        <Slider {...settings}
                                 ref={c => (this.slider = c)}
                         > 
                                { productList }
