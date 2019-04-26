@@ -1,7 +1,11 @@
+.homepage__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; 
+}
+
 .homepage__container {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
 }
 
 .header__links {

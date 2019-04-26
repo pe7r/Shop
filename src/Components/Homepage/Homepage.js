@@ -15,9 +15,9 @@ const Homepage = (props) => {
                         <NavLink to="/products"> Products </NavLink>
                     </div>
                 </header>
-                <SliderPopular 
-                    productsList={props.productsList}
-                />
+                    <SliderPopular 
+                        productsList={props.productsList}
+                    />
             </section>
         </div>
     )
