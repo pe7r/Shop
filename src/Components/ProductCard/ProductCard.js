@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './ProductCard.css'
+import './ProductCard.scss'
 
 const ProductCard = (props) => {
     const imgStyles = {
@@ -8,7 +8,7 @@ const ProductCard = (props) => {
     }
 
     return (
-        <div className="productcard">
+        <div className={`productcard ${props.theme}`}>
                 <div className="productcard__image" style={imgStyles}></div>
             <div className="productcard__info">			
                 <div className="productcard__title">
