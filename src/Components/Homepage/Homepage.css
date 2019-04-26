@@ -1,15 +1,20 @@
 .homepage__content {
     display: flex;
-    flex-direction: column;
     margin: 0 auto; 
     width: 1300px;
-    padding: 0 10px;
+    padding-left: 10px;
+    flex-direction: column;
 }
 
-.homepage__container {
+.homepage__container header {
     display: flex;
 }
 
 .header__links {
     margin-bottom: 20px;
+}
+
+.homepage__slider-row {
+    display: flex;
+    box-sizing: border-box;
 }

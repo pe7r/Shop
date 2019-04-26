@@ -61,30 +61,26 @@ class SliderPopular extends React.Component {
 
         return (
             <div className="slider__content">
-                <div className='slider__row'>
-                    <div className="slider__header">
-                        <div className="slider__title">
-                            <p> Popular </p>
+                <div className="slider__header">
+                    <div className="slider__title">
+                        <p> Popular </p>
+                    </div>
+                    <div className="slider__switch">
+                        <div className="slider__navlink">
+                            <NavLink to="/products" className="navlink"> See All </NavLink>
                         </div>
-                        <div className="slider__switch">
-                            <div className="slider__navlink">
-                                <NavLink to="/products" className="navlink"> See All </NavLink>
-                            </div>
-                            <div className="slider__buttons">
-                                <button onClick={this.previous}> Prev </button>
-                                <button onClick={this.next}> Next </button>
-                            </div>
+                        <div className="slider__buttons">
+                            <button onClick={this.previous}> Prev </button>
+                            <button onClick={this.next}> Next </button>
                         </div>
                     </div>
-                    <div className="slider__wrapper">
-                        <div className="slider__container">
-                            <Slider {...settings}
-                                    ref={c => (this.slider = c)}
-                            > 
-                                { productList }
-                            </Slider>
-                        </div>
-                    </div>
+                </div>
+                <div className="slider__container">
+                    <Slider {...settings}
+                            ref={c => (this.slider = c)}
+                    > 
+                        { productList }
+                    </Slider>
                 </div>
             </div>
         )

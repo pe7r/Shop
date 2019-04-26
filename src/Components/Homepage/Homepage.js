@@ -6,7 +6,6 @@ import './Homepage.css'
 
 const Homepage = (props) => {
     return (
-        <div className="homepage__container">
             <section className='homepage__content'>
                 <header>
                     <h1> Homepage </h1>
@@ -15,11 +14,12 @@ const Homepage = (props) => {
                         <NavLink to="/products"> Products </NavLink>
                     </div>
                 </header>
+                <div className="homepage__slider-row">
                     <SliderPopular 
                         productsList={props.productsList}
                     />
+                </div>                   
             </section>
-        </div>
     )
 }
 
