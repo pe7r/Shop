@@ -175,34 +175,21 @@
     }
 
     .colors__dot {
-        display: flex;
         height: 10px;
         width: 10px;
-        background-color: black;
-        border-radius: 50%;
         visibility: visible;
     }
 
     .colors__border {
-        display: flex;
         height: 15px;
         width: 15px;
-        border-radius: 50%;
-        border: 1px solid grey;
-        justify-content: center;
-        align-items: center;
         margin-right: 2px;
         visibility: hidden;
     }
 
     .colors__border--active {
-        display: flex;
         height: 15px;
         width: 15px;
-        border-radius: 50%;
-        border: 1px solid black;
-        justify-content: center;
-        align-items: center;
         margin-right: 1.5px;
     }
 }
