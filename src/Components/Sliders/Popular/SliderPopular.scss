@@ -1,6 +1,9 @@
 .slider__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     width: 1300px;
-    overflow-x: hidden;   
+    overflow-x: hidden;  
 }
 
 .slider__header {
@@ -74,4 +77,8 @@
 
 .slider__body {
     width: 1300px;
+}
+
+@media (max-width: 1100px) {
+
 }
