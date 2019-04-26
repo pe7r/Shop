@@ -19,7 +19,7 @@ class SliderPopular extends React.Component {
 
         const productList = productsList.map(product => 
             
-            <div className="slider__col" key={product.id}>
+            <div className="slider-popular__col" key={product.id}>
                 <ProductCard 
                     title={product.title}
                     description={product.description}
