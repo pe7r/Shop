@@ -60,22 +60,22 @@ class SliderPopular extends React.Component {
             }
 
         return (
-            <div className="slider__content">
-                <div className="slider__header">
-                    <div className="slider__title">
+            <div className="slider-popular__content">
+                <div className="slider-popular__header">
+                    <div className="slider-popular__title">
                         <p> Popular </p>
                     </div>
-                    <div className="slider__switch">
-                        <div className="slider__navlink">
+                    <div className="slider-popular__switch">
+                        <div className="slider-popular__navlink">
                             <NavLink to="/products" className="navlink"> See All </NavLink>
                         </div>
-                        <div className="slider__buttons">
+                        <div className="slider-popular__buttons">
                             <button onClick={this.previous}> Prev </button>
                             <button onClick={this.next}> Next </button>
                         </div>
                     </div>
                 </div>
-                <div className="slider__container">
+                <div className="slider-popular__slider">
                     <Slider {...settings}
                             ref={c => (this.slider = c)}
                     > 
