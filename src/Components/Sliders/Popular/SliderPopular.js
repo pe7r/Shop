@@ -15,11 +15,9 @@ class SliderPopular extends React.Component {
     }
 
     render() {
-        const {
-            props,
-        } = this;
+        const { productsList } = this.props
 
-        const productList = props.productsList.map(product => 
+        const productList = productsList.map(product => 
             
             <div className="slider__col" key={product.id}>
                 <ProductCard 
