@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import './SliderPopular.css'
+import './SliderPopular.scss'
 import ProductCard from '../../ProductCard/ProductCard';
 import Slider from "react-slick"
 
@@ -34,12 +34,21 @@ class SliderPopular extends React.Component {
             )
 
             const settings = {
-                dots: false,
                 infinite: true,
                 speed: 500,
                 slidesToShow: 6,
                 slidesToScroll: 6,
                 draggable: false,
+                responsive: [
+                    {
+                        breakpoint: 1100,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4,
+                            infinite: true,
+                        }
+                    }
+                ]
             }
 
         return (
@@ -59,12 +68,14 @@ class SliderPopular extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="slider__container">
-                        <Slider {...settings}
-                                ref={c => (this.slider = c)}
-                        > 
-                               { productList }
-                        </Slider>
+                    <div className="slider__wrapper">
+                        <div className="slider__container">
+                            <Slider {...settings}
+                                    ref={c => (this.slider = c)}
+                            > 
+                                { productList }
+                            </Slider>
+                        </div>
                     </div>
                 </div>
             </div>
