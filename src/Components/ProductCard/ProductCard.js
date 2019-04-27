@@ -7,17 +7,19 @@ const ProductCard = (props) => {
         backgroundImage: `url(${props.image})`
     }
 
+    const { theme, title, oldPrice, price } = props;
+
     return (
-        <div className={`productcard ${props.theme}`}>
+        <div className={`productcard ${theme}`}>
                 <div className="productcard__image" style={imgStyles}></div>
             <div className="productcard__info">			
                 <div className="productcard__title">
-                    <span> <b>{ props.title }</b> </span>
+                    <span> <b>{ title }</b> </span>
                 </div>
                 <div className="productcard__price">
                     <span> 
-                        <span className="productcard__old-price"> ${Math.round(props.oldPrice / 100)} </span> 
-                        { props.price } 
+                        <span className="productcard__old-price"> ${Math.round(oldPrice / 100)} </span> 
+                        { price } 
                     </span>
                 </div>
 
