@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import {NavLink} from 'react-router-dom'
 import ProductCard from '../ProductCard/ProductCard'
 
@@ -6,9 +7,9 @@ import './Products.css'
 
 class Products extends React.Component {
     render() {
-        console.log(this.props.productsList)
+        const { productsList } = this.props;
 
-        const productList = this.props.productsList.map(product => 
+        const productList = productsList.map(product => 
         
             <div className="products__col" key={product.id}>
                 <ProductCard 
@@ -43,3 +44,7 @@ class Products extends React.Component {
 }
 
 export default Products
+
+Products.propTypes = {
+    productsList: PropTypes.array.isRequired,
+};
