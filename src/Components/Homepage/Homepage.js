@@ -5,6 +5,7 @@ import SliderPopular from '../Sliders/Popular/SliderPopular'
 import './Homepage.css'
 
 const Homepage = (props) => {
+    const { productsList } = props;
     return (
             <section className='homepage__content'>
                 <header>
@@ -16,7 +17,7 @@ const Homepage = (props) => {
                 </header>
                 <div className="homepage__slider-row">
                     <SliderPopular 
-                        productsList={props.productsList}
+                        productsList={ productsList }
                     />
                 </div>                   
             </section>
