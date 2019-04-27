@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './ProductCard.scss'
 
@@ -49,3 +50,9 @@ const ProductCard = (props) => {
 }
 
 export default ProductCard
+
+ProductCard.propTypes = {
+    title: PropTypes.string.isRequired,
+    oldPrice: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired
+};
