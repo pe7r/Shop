@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {NavLink} from 'react-router-dom'
 import SliderPopular from '../Sliders/Popular/SliderPopular'
 
@@ -25,3 +26,7 @@ const Homepage = (props) => {
 }
 
 export default Homepage
+
+Homepage.propTypes = {
+    productsList: PropTypes.array.isRequired,
+};
