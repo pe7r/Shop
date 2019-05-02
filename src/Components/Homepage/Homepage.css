@@ -1,8 +1,31 @@
-.homepage__container {
+.homepage__content {
     display: flex;
-    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto; 
+    flex-direction: column; 
+}
+
+.homepage__content header {
+    display: flex;
 }
 
 .header__links {
     margin-bottom: 20px;
+}
+
+.homepage__slider-row {
+    display: flex;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+    .homepage__content {
+        margin: 0 58px;  
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage__content {
+        margin: 0 auto;  
+    }
 }
