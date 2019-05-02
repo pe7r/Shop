@@ -1,8 +1,8 @@
 .homepage__content {
     display: flex;
-    width: 1300px;
+    max-width: 1300px;
     margin: 0 auto; 
-    flex-direction: column;
+    flex-direction: column; 
 }
 
 .homepage__content header {

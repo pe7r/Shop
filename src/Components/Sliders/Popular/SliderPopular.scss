@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 1300px;
     overflow-x: hidden;  
 }
 
@@ -10,8 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    padding: 0 20px 0 0px;
+    padding: 0 10px;
     height: 40px;
     margin-bottom: 20px;
 
@@ -57,7 +55,6 @@
 
 .slider-popular__slider {
     display: block;
-    width: 1300px;
 }
 
 .slider-popular__col {
