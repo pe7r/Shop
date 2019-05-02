@@ -23,3 +23,9 @@
         margin: 0 58px;  
     }
 }
+
+@media (max-width: 767px) {
+    .homepage__content {
+        margin: 0 auto;  
+    }
+}
