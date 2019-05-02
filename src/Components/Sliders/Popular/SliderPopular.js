@@ -75,7 +75,7 @@ class SliderPopular extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="slider-popular__slider">
+                <div>
                     <Slider {...settings}
                             ref={c => (this.slider = c)}
                     > 

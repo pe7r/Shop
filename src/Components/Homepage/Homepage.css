@@ -1,7 +1,6 @@
 .homepage__content {
     display: flex;
     margin: 0 auto; 
-    width: 1300px;
     padding-left: 10px;
     flex-direction: column;
 }
