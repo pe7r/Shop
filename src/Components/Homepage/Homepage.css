@@ -1,11 +1,11 @@
 .homepage__content {
     display: flex;
+    width: 1300px;
     margin: 0 auto; 
-    padding-left: 10px;
     flex-direction: column;
 }
 
-.homepage__container header {
+.homepage__content header {
     display: flex;
 }
 
