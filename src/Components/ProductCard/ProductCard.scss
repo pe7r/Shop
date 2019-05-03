@@ -93,7 +93,7 @@
 
     .productcard__info {
         height: 135px;
-        padding: 20px 10px 0px 0px;
+        padding-top: 20px;
     }
 
     .colors__dot {
@@ -145,7 +145,7 @@
 
 @media screen and (max-width: 767px) {
     .productcard {
-        padding: 10px 10px 10px 10px;
+        padding: 10px;
     }
 
     .productcard__image {
@@ -201,6 +201,10 @@
         .productcard__info {
             height: 100px;
             padding-top: 10px;
+        }
+
+        .productcard__colors {
+            padding-top: 20px;
         }
     }
 }
