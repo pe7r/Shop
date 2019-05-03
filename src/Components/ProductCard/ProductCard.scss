@@ -51,8 +51,8 @@
 
 .colors__dot {
     display: flex;
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
     background-color: black;
     border-radius: 50%;
     visibility: visible;
@@ -62,13 +62,12 @@
 
 .colors__border {
     display: flex;
-    height: 26px;
-    width: 26px;
     border-radius: 50%;
     border: 2px solid grey;
     justify-content: center;
     align-items: center;
     margin-right: 2.5px;
+    padding: 3px;
     visibility: hidden;
 }
 
@@ -78,13 +77,12 @@
 
 .colors__border--active {
     display: flex;
-    height: 26px;
-    width: 26px;
     border-radius: 50%;
     border: 2px solid black;
     justify-content: center;
     align-items: center;
     margin-right: 2.5px;
+    padding: 3px;
 }
 
 .productcard.popular {
@@ -185,24 +183,22 @@
 
     .colors__border {
         display: flex;
-        height: 17px;
-        width: 17px;
         border-radius: 50%;
         border: 2px solid grey;
         justify-content: center;
         align-items: center;
         margin-right: 1.5px;
+        padding: 2px;
         visibility: hidden;
     }
 
     .colors__border--active {
         display: flex;
-        height: 17px;
-        width: 17px;
         border-radius: 50%;
         border: 2px solid black;
         justify-content: center;
         align-items: center;
         margin-right: 1.5px;
+        padding: 2px;
     }
 }
