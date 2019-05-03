@@ -57,7 +57,7 @@
     border-radius: 50%;
     visibility: visible;
     cursor: pointer;
-    }
+}
     
 
 .colors__border {
@@ -185,10 +185,10 @@
 
     .colors__border {
         display: flex;
-        height: 16px;
-        width: 16px;
+        height: 17px;
+        width: 17px;
         border-radius: 50%;
-        border: 1px solid grey;
+        border: 2px solid grey;
         justify-content: center;
         align-items: center;
         margin-right: 1.5px;
@@ -197,10 +197,10 @@
 
     .colors__border--active {
         display: flex;
-        height: 16px;
-        width: 16px;
+        height: 17px;
+        width: 17px;
         border-radius: 50%;
-        border: 1px solid black;
+        border: 2px solid black;
         justify-content: center;
         align-items: center;
         margin-right: 1.5px;
