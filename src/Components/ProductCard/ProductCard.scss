@@ -40,6 +40,8 @@
 .productcard__old-price {
     display: inline-block;
     text-decoration: line-through;
+    color: grey;
+    margin-right: 5px;
 }
 
 .productcard__colors {
@@ -49,12 +51,13 @@
 
 .colors__dot {
     display: flex;
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     background-color: black;
     border-radius: 50%;
     visibility: visible;
-    }
+    cursor: pointer;
+}
     
 
 .colors__border {
@@ -62,7 +65,7 @@
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    border: 1px solid grey;
+    border: 2px solid grey;
     justify-content: center;
     align-items: center;
     margin-right: 2.5px;
@@ -78,7 +81,7 @@
     height: 26px;
     width: 26px;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 2px solid black;
     justify-content: center;
     align-items: center;
     margin-right: 2.5px;
@@ -135,10 +138,10 @@
     .productcard__info {
         display: flex;
         flex-direction: column;
-        height: 73px;
+        height: 100px;
         width: 100%;
         font-size: 15px;
-        padding: 12px 0px 10px;
+        padding: 12px 0px 5px;
     }
 
     .productcard__image {
@@ -147,6 +150,7 @@
 
     .productcard__colors {
         padding-top: 12px;
+        margin-left: -2px;
     }
 }
 
@@ -162,11 +166,12 @@
     .productcard__info {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        height: 113px;
+        justify-content: space-between;
+        height: 100px;
         width: 100%;
         font-size: 15px;
-        padding: 14px 0px 10px;
+        padding: 14px 0px 0px;
+        margin-bottom: -4px;
     }
 
     .colors__dot {
@@ -180,10 +185,10 @@
 
     .colors__border {
         display: flex;
-        height: 16px;
-        width: 16px;
+        height: 17px;
+        width: 17px;
         border-radius: 50%;
-        border: 1px solid grey;
+        border: 2px solid grey;
         justify-content: center;
         align-items: center;
         margin-right: 1.5px;
@@ -192,10 +197,10 @@
 
     .colors__border--active {
         display: flex;
-        height: 16px;
-        width: 16px;
+        height: 17px;
+        width: 17px;
         border-radius: 50%;
-        border: 1px solid black;
+        border: 2px solid black;
         justify-content: center;
         align-items: center;
         margin-right: 1.5px;
