@@ -107,15 +107,11 @@
     }
 
     .colors__border {
-        height: 15px;
-        width: 15px;
         margin-right: 2px;
         visibility: hidden;
     }
 
     .colors__border--active {
-        height: 15px;
-        width: 15px;
         margin-right: 1.5px;
     }
 }
@@ -198,5 +194,12 @@
         align-items: center;
         margin-right: 1.5px;
         padding: 2px;
+    }
+
+    .productcard.popular {
+        .productcard__image {
+            height: 135px;
+            margin: 0px;
+        }
     }
 }
