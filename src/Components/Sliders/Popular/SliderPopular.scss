@@ -61,7 +61,15 @@
 }
 
 @media (max-width: 767px) {
+    .slider-popular__content {
+        margin: 0 5px;
+    }
+
     .slider-popular__title {
         font-size: 25px;
+    }
+
+    .slider-popular__col {
+        padding: 0px 5px;
     }
 }
