@@ -150,6 +150,7 @@
 
     .productcard__colors {
         padding-top: 12px;
+        margin-left: -2px;
     }
 }
 
@@ -165,11 +166,12 @@
     .productcard__info {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        height: 113px;
+        justify-content: space-between;
+        height: 100px;
         width: 100%;
         font-size: 15px;
-        padding: 14px 0px 10px;
+        padding: 14px 0px 0px;
+        margin-bottom: -4px;
     }
 
     .colors__dot {
