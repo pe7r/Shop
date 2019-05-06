@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    overflow-x: hidden;  
+    overflow-x: hidden;
+    position: relative;
 }
 
 .slider-popular__header {
@@ -79,12 +80,13 @@
 
     .slider-popular__header {
         margin-bottom: 10px;
+        padding-left: 5px;
     }
 
     .slider-popular__switch {
-        position: relative;
-        top: 320px;
-        right: 212px;
+        position: absolute;
+        bottom: 0px;
+        left: -70px;
     }
 
     .slider-popular__navlink {
