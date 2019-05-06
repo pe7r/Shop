@@ -28,4 +28,8 @@
     .homepage__content {
         margin: 0 auto;  
     }
+
+    .homepage__slider-row {
+        min-height: 395px;
+    }
 }
