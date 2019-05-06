@@ -150,6 +150,14 @@
     .productcard__colors {
         padding-top: 12px;
     }
+
+    .colors__border--active {
+        padding: 2px;
+    }
+
+    .colors__border {
+        padding: 2px;
+    }
 }
 
 @media screen and (max-width: 767px) {
