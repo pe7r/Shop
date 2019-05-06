@@ -63,7 +63,15 @@ class SliderPopular extends React.Component {
                         }
                     },
                     {
-                        breakpoint: 767,
+                        breakpoint: 800,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 500,
                         settings: {
                             slidesToShow: 2,
                             slidesToScroll: 2,
