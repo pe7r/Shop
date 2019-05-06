@@ -62,7 +62,11 @@
 
 @media (max-width: 767px) {
     .slider-popular__content {
+        display: flex;
         margin: 0 5px;
+        height: 360px;
+        overflow-y: hidden;
+        justify-content: flex-start;
     }
 
     .slider-popular__title {
@@ -79,7 +83,16 @@
 
     .slider-popular__switch {
         position: relative;
-        top: 310px;
-        right: 223px;
+        top: 320px;
+        right: 212px;
+    }
+
+    .slider-popular__navlink {
+        position: relative;
+        left: 240px;
+    }
+
+    .slider-popular__buttons button {
+        padding: 10px 20px;
     }
 }
