@@ -208,7 +208,9 @@
         margin-right: 1.5px;
         padding: 2px;
     }
+}
 
+@media (max-width: 450px) {
     .productcard.popular {
         .productcard__image {
             height: 135px;
