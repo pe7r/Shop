@@ -60,6 +60,7 @@ class SliderPopular extends React.Component {
                             slidesToShow: 4,
                             slidesToScroll: 4,
                             infinite: true,
+                            speed: 1000
                         }
                     },
                     {
@@ -97,7 +98,7 @@ class SliderPopular extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="slider-popular__slider-container">
                     <Slider {...settings}
                             ref={c => (this.slider = c)}
                     > 

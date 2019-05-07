@@ -9,6 +9,12 @@
     display: flex;
 }
 
+.homepage__slider-row {    
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
 .header__links {
     margin-bottom: 20px;
 }
@@ -16,5 +22,11 @@
 @media (max-width: 767px) {
     .homepage__content {
         margin: 0 auto;  
+    }
+}
+
+@media (max-width: 450px) {
+    .homepage__slider-row {
+        padding: 0 10px;
     }
 }
