@@ -93,8 +93,8 @@ class SliderPopular extends React.Component {
                             <NavLink to="/products" className="navlink"> See All </NavLink>
                         </div>
                         <div className="slider-popular__buttons">
-                            <button onClick={this.previous}> {leftArrow} </button>
-                            <button onClick={this.next}> {rightArrow} </button>
+                            <button onClick={this.previous} className="button-left"> {leftArrow} </button>
+                            <button onClick={this.next} className="button-right"> {rightArrow} </button>
                         </div>
                     </div>
                 </div>

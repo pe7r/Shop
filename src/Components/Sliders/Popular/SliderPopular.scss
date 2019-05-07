@@ -50,8 +50,15 @@
     padding: 11px 23px;
     color: green;
     border: 1px solid green;
-    border-radius: 3px;
     background-color: white;
+}
+
+.button-left {
+    border-radius: 3px 0px 0px 3px;
+}
+
+.button-right {
+    border-radius: 0px 3px 3px 0px;
 }
 
 .slider-popular__slider-container {
