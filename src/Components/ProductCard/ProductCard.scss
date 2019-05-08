@@ -113,10 +113,30 @@
 
 .productcard.new {
     padding: 0;
+
     .productcard__image {
         background-position: center;
         background-size: cover;
         height: 340px;
+    }
+
+    .productcard__info {
+        height: 200px;
+        padding: 20px 30px 30px 28px;
+    }
+
+    .productcard__title {
+        margin-bottom: -50px;
+    }
+
+    .colors__dot {
+        width: 27px;
+        height: 27px;
+    }
+
+    .colors__border, .colors__border--active {
+        padding: 5px;
+        border-width: 1px;
     }
 }
 
