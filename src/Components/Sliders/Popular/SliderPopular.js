@@ -33,7 +33,7 @@ class SliderPopular extends React.Component {
 
         const productList = productsList.map(product => 
             
-            <div className="slider-popular__col" key={product.id}>
+            <div className="slider__col" key={product.id}>
                 <ProductCard 
                     title={product.title}
                     description={product.description}
@@ -83,22 +83,22 @@ class SliderPopular extends React.Component {
             }
 
         return (
-            <div className="slider-popular__content">
-                <div className="slider-popular__header">
-                    <div className="slider-popular__title">
+            <div className="slider__content">
+                <div className="slider__header">
+                    <div className="slider__title">
                         <p> Popular </p>
                     </div>
-                    <div className="slider-popular__switch">
-                        <div className="slider-popular__navlink">
+                    <div className="slider__switch">
+                        <div className="slider__navlink">
                             <NavLink to="/products" className="navlink"> See All </NavLink>
                         </div>
-                        <div className="slider-popular__buttons">
+                        <div className="slider__buttons">
                             <button onClick={this.previous} className="button-left"> {leftArrow} </button>
                             <button onClick={this.next} className="button-right"> {rightArrow} </button>
                         </div>
                     </div>
                 </div>
-                <div className="slider-popular__slider-container">
+                <div className="slider__slider-container">
                     <Slider {...settings}
                             ref={c => (this.slider = c)}
                     > 
