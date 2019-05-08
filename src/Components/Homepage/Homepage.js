@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {NavLink} from 'react-router-dom'
 import SliderPopular from '../Sliders/Popular/SliderPopular'
-
 import './Homepage.css'
+import SliderNew from '../Sliders/New/SliderNew';
 
 const Homepage = (props) => {
     const { productsList } = props;
@@ -22,6 +22,9 @@ const Homepage = (props) => {
                             productsList={ productsList }
                         />
                     </div> 
+                    <SliderNew
+                            productsList={ productsList }    
+                        />
                 </div>                  
             </section>
     )
