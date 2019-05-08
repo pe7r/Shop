@@ -17,12 +17,12 @@ const Homepage = (props) => {
                             <NavLink to="/products"> Products </NavLink>
                         </div>
                     </header>
-                    <div className="homepage__slider-row">
+                    <div className="homepage__slider-popular__row">
                         <SliderPopular 
                             productsList={ productsList }
                         />
                     </div>
-                    <div className="homepage__slider-row"> 
+                    <div className="homepage__slider-new__row"> 
                         <SliderNew
                             productsList={ productsList }    
                         />

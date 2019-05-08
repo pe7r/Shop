@@ -9,10 +9,14 @@
     display: flex;
 }
 
-.homepage__slider-row {    
+.homepage__slider-popular__row, .homepage__slider-new__row {    
     display: flex;
     justify-content: center;
     padding: 0 20px;
+}
+
+.homepage__slider-popular__row {
+    margin-bottom: 40px;
 }
 
 .header__links {
