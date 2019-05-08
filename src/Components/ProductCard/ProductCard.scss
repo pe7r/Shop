@@ -111,6 +111,15 @@
     }
 }
 
+.productcard.new {
+    padding: 0;
+    .productcard__image {
+        background-position: center;
+        background-size: cover;
+        height: 340px;
+    }
+}
+
 @media (max-width: 1100px) {
     .productcard.popular {
         .productcard__image {

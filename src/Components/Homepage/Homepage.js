@@ -21,10 +21,12 @@ const Homepage = (props) => {
                         <SliderPopular 
                             productsList={ productsList }
                         />
-                    </div> 
-                    <SliderNew
+                    </div>
+                    <div className="homepage__slider-row"> 
+                        <SliderNew
                             productsList={ productsList }    
                         />
+                    </div>
                 </div>                  
             </section>
     )
