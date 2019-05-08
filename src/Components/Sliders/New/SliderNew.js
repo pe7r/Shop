@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import ProductCard from '../../ProductCard/ProductCard';
 import Slider from "react-slick"
-import '../Popular/SliderPopular.scss';
+import '../SliderStyles.scss';
 
 class SliderNew extends React.Component {
     next = () => {

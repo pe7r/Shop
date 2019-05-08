@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import './SliderPopular.scss'
+import '../SliderStyles.scss';
 import ProductCard from '../../ProductCard/ProductCard';
 import Slider from "react-slick"
 
