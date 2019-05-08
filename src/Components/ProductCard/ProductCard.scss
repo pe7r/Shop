@@ -156,6 +156,12 @@
             margin-bottom: -10px;
         }
     }
+
+    .productcard.new {
+        .productcard__image {
+            height: 250px;
+        }
+    }
 }
 
 @media (max-width: 1024px) {
