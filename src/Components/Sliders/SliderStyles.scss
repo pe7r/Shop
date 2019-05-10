@@ -1,4 +1,4 @@
-.slider-popular__content {
+.slider__content {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.slider-popular__header {
+.slider__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,20 +14,20 @@
     margin-bottom: 20px;
 }
 
-.slider-popular__title {
+.slider__title {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 7px;
     margin-left: 3px;
 }
 
-.slider-popular__switch {
+.slider__switch {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.slider-popular__navlink {
+.slider__navlink {
     display: inline-block;
 }
 
@@ -41,12 +41,12 @@
     color: green;
 }
 
-.slider-popular__buttons {
+.slider__buttons {
     display: inline-block;
     margin-left: 32px;
 }
 
-.slider-popular__buttons button {
+.slider__buttons button {
     padding: 11px 23px;
     color: green;
     border: 1px solid green;
@@ -61,61 +61,61 @@
     border-radius: 0px 3px 3px 0px;
 }
 
-.slider-popular__slider-container {
+.slider__slider-container {
     margin: 0 -8px;
 }
 
-.slider-popular__col {
+.slider__col {
     padding: 0 10px;
 }
 
 @media (max-width: 1100px) {
-    .slider-popular__content {
+    .slider__content {
         max-width: 960px;
     }
 }
 
 @media (max-width: 450px) {
-    .slider-popular__content {
+    .slider__content {
         display: flex;
         height: 360px;
         overflow-y: hidden;
         justify-content: flex-start;
     }
 
-    .slider-popular__title {
+    .slider__title {
         font-size: 25px;
         margin: 3px 0px;
     }
 
-    .slider-popular__header {
+    .slider__header {
         margin-bottom: 10px;
     }
 
-    .slider-popular__col {
+    .slider__col {
         padding: 0 5px;
     }
 
-    .slider-popular__switch {
+    .slider__switch {
         position: absolute;
         bottom: 0px;
         left: -70px;
     }
 
-    .slider-popular__navlink {
+    .slider__navlink {
         position: relative;
         left: 235px;
     }
 
-    .slider-popular__buttons {
+    .slider__buttons {
         margin-left: 27px;
     }
 
-    .slider-popular__buttons button {
+    .slider__buttons button {
         padding: 11px 22px;
     }
 
-    .slider-popular__slider-container {
+    .slider__slider-container {
         margin: 0 -4px;
     }
 }
