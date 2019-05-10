@@ -91,8 +91,12 @@
     }
 
     .productcard__info {
-        height: 135px;
-        padding-top: 20px;
+        height: 110px;
+        padding: 20px 0 0 0;
+    }
+
+    .productcard__title {
+        margin-bottom: -5px;
     }
 
     .colors__dot {
@@ -104,10 +108,12 @@
     .colors__border {
         margin-right: 2px;
         visibility: hidden;
+        padding: 2px;
     }
 
     .colors__border--active {
         margin-right: 1.5px;
+        padding: 2px;
     }
 }
 
