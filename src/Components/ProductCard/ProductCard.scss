@@ -106,13 +106,11 @@
     }
 
     .colors__border {
-        margin-right: 2px;
         visibility: hidden;
         padding: 2px;
     }
 
     .colors__border--active {
-        margin-right: 1.5px;
         padding: 2px;
     }
 }
@@ -142,7 +140,7 @@
 
     .colors__border, .colors__border--active {
         padding: 5px;
-        border-width: 1px;
+        border-width: 2px;
     }
 }
 
