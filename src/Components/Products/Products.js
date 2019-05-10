@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import {NavLink} from 'react-router-dom'
 import ProductCard from '../ProductCard/ProductCard'
-
 import './Products.css'
+import Filters from '../Filters/Filters'
 
 class Products extends React.Component {
     render() {
@@ -32,6 +32,9 @@ class Products extends React.Component {
                     <NavLink to="/"> Homepage </NavLink>
                     <NavLink to="/products"> Products </NavLink>
                 </header>
+                <div className="products__filters">
+                    <Filters />
+                </div>
                 <div className="products__list">
                     <div className="products__row">
                         { productList }
