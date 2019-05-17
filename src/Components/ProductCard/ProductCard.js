@@ -8,12 +8,25 @@ class ProductCard extends React.Component {
         theme: ''
     }
 
+    state = {
+        colors: ['black', 'blue', 'brown','red', 'yellow','orange']
+    }
+
     render() {
         const { theme, title, oldPrice, price, image } = this.props;
 
         const imgStyles = {
             backgroundImage: `url(${image})`
         }
+
+        let colorsList = this.state.colors.map(color => {
+            return (
+                <div className="colors__border--active">
+                    <span className="colors__dot" style={{'backgroundColor': color}}></span>
+                </div>
+            )
+        
+        }) 
 
         return (
             <div className={`productcard ${theme}`}>
@@ -30,24 +43,7 @@ class ProductCard extends React.Component {
                     </div>
 
                     <div className="productcard__colors">
-                        <div className="colors__border--active">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
+                        { colorsList }
                     </div>
                 </div>
             </div>
