@@ -25,22 +25,22 @@ class Products extends React.Component {
             )
 
         return (
-            <div>
-            <section className='products__content'>
-                <header className='products__header'>
-                    <h1> Products </h1>
-                    <NavLink to="/"> Homepage </NavLink>
-                    <NavLink to="/products"> Products </NavLink>
-                </header>
-                <div className="products__filters">
-                    <Filters />
-                </div>
-                <div className="products__list">
-                    <div className="products__row">
-                        { productList }
+            <div className="products__container">
+                <section className='products__content'>
+                    <header className='products__header'>
+                        <h1> Products </h1>
+                        <NavLink to="/"> Homepage </NavLink>
+                        <NavLink to="/products"> Products </NavLink>
+                    </header>
+                    <div className="products__filters">
+                        <Filters />
                     </div>
-                </div>
-            </section>
+                    <div className="products__list">
+                        <div className="products__row">
+                            { productList }
+                        </div>
+                    </div>
+                </section>
             </div>
         )
     }
