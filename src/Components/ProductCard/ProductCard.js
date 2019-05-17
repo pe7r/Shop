@@ -9,7 +9,7 @@ class ProductCard extends React.Component {
     }
 
     state = {
-        colors: ['black', 'blue', 'brown','red', 'yellow','orange']
+        colors: ['black', 'blue', 'brown','red', 'orange','yellow']
     }
 
     render() {
@@ -20,8 +20,12 @@ class ProductCard extends React.Component {
         }
 
         let colorsList = this.state.colors.map(color => {
+            let active ='';
+            if (color === 'black') {
+                active = 'active'
+            }
             return (
-                <div className="colors__border--active">
+                <div className={`colors__border ${active}`}>
                     <span className="colors__dot" style={{'backgroundColor': color}}></span>
                 </div>
             )
