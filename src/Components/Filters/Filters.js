@@ -3,7 +3,7 @@ import './Filters.scss'
 
 export default class Filters extends Component {
   state = {
-    filters: ['size', 'color','room','price','material','construction','style']
+    filters: ['Size','Color','Room','Price','Material','Construction','Style']
   }
   render() {
     const {filters} = this.state;
