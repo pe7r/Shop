@@ -26,15 +26,16 @@ class Products extends React.Component {
 
         return (
             <div className="products__container">
-                <section className='products__content'>
-                    <header className='products__header'>
-                        <h1> Products </h1>
-                        <NavLink to="/"> Homepage </NavLink>
-                        <NavLink to="/products"> Products </NavLink>
-                    </header>
+                <header className='products__header'>
+                    <h1> Products </h1>
+                    <NavLink to="/"> Homepage </NavLink>
+                    <NavLink to="/products"> Products </NavLink>
                     <div className="products__filters">
                         <Filters />
                     </div>
+                </header>
+                 
+                <section className='products__content'>
                     <div className="products__list">
                         <div className="products__row">
                             { productList }

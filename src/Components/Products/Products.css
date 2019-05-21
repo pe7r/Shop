@@ -5,10 +5,6 @@
     align-items: center;
 }
 
-.products__header {
-    display: flex;
-}
-
 .products__list {
     display: flex;
     justify-content: center;
@@ -32,10 +28,8 @@
 }
 
 .products__filters {
-    display: flex;
-    justify-content: center;
-    max-width: 1320px;
-    padding: 0 10px;
+    display: block;
+    width: 100%;
 }
 
 @media (max-width: 1024px) {

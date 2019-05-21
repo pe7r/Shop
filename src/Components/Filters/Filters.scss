@@ -1,9 +1,8 @@
 .filters__row {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    border: 1px solid rgba(5, 101, 81, 0.2);
-    background-color: red;
+    background-color: grey;
+    padding: 20px 110px;
 }
 
 .filters__button {
