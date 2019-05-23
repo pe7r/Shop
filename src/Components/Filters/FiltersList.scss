@@ -5,6 +5,16 @@
     padding: 20px 110px;
 }
 
+.filters__box {
+    background-color: firebrick;
+    border: 2px solid black;
+    display: none;
+}
+
+.filters__box.active {
+    display: block;
+}
+
 .filters__button {
     display: flex;
     justify-content: center;
