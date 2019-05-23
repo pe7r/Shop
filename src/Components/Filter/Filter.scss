@@ -1,0 +1,24 @@
+.filter__box {
+    background-color: firebrick;
+    border: 2px solid black;
+    display: none;
+    position: absolute;
+}
+
+.filter__box.active {
+    display: block;
+}
+
+.filter__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    height: 30px; 
+    border-radius: 5px;
+    border: 2px solid rgba(5, 101, 81, 0.4);
+    color: #056551;
+    font-weight: bold;
+    padding: 0 40px;
+    position: relative;
+}

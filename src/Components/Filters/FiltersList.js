@@ -1,34 +1,32 @@
 import React, { Component } from 'react'
 import './FiltersList.scss'
+import Filter from '../Filter/Filter';
 
 export default class FiltersList extends Component {
   state = {
     filters: ['Size','Color','Room','Price','Material','Construction','Style'],
-    boxShow: false
+    setFilter: ''
   }
 
-  showBox = () => {
-    this.setState(prevState => {
-      return {boxShow: !prevState.boxShow}
-    })
+  chooseFilter = (id) => {
+    this.setState({
+      setFilter: id
+  })
   }
+
   render() {
     const {filters, boxShow} = this.state;
     let filtersList = filters.map(filter => {
       let active = '';
-      if (boxShow) {
+      if (filter === this.state.setFilter) {
         active = 'active'
-      }
-      return (
-        <div key={filter}>
-          <button 
-            className="filters__button"
-            onClick={this.showBox}> 
-            {filter} 
-          </button>
-          <div className={`filters__box ${active}`}> Many variants </div>
-        </div>
-      )
+    }
+      return <Filter 
+              boxShow={boxShow}
+              key={filter}
+              filter={filter}
+              active={active}
+              chooseFilter={this.chooseFilter}/>
     })
     return (
         <section className="filters__container">
