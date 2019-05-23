@@ -11,7 +11,28 @@ export default class FiltersList extends Component {
   chooseFilter = (id) => {
     this.setState({
       setFilter: id
-  })
+    })
+  }
+
+  handleClickOutside = () => {
+    this.setState({
+      setFilter: ''
+    })
+  }
+
+  handleClick = (e) => {
+    if (this.node.contains(e.target)) {
+      return;
+    }
+    this.handleClickOutside();
+  }
+
+  componentWillMount = () => {
+    document.addEventListener('mousedown', this.handleClick, false)
+  }
+
+  componentWillUnmount = () => {
+    document.removeEventListener('mousedown', this.handleClick, false)
   }
 
   render() {
@@ -29,7 +50,9 @@ export default class FiltersList extends Component {
               chooseFilter={this.chooseFilter}/>
     })
     return (
-        <section className="filters__container">
+        <section 
+          className="filters__container"
+          ref={ node => this.node = node }>
           <div className="filters__row">
             { filtersList }
           </div>
