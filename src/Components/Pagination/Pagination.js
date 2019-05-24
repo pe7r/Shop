@@ -5,19 +5,26 @@ export default class Pagination extends Component {
     render() {
         const { onPageBack, onPageForward, actualPage, totalCount } = this.props;
 
-        let disabled;
+        const pageCount = Math.ceil(totalCount/12);
+
+        let disabledBack;
         if (actualPage === 1) {
-            disabled = 'disabled'
+            disabledBack = 'disabled'
+        } 
+
+        let disabledForward;
+        if (actualPage === pageCount) {
+            disabledForward = 'disabled'
         }
         return (
             <div className='pagination__container'>
-                <button onClick={onPageBack} disabled={disabled}>
+                <button onClick={onPageBack} disabled={disabledBack}>
                     Back
                 </button>
                 <div>
-                    On page {actualPage} of {Math.ceil(totalCount/12)}
+                    On page {actualPage} of {pageCount}
                 </div>
-                <button onClick={onPageForward}>
+                <button onClick={onPageForward} disabled={disabledForward}>
                     Forward
                 </button>
             </div>
