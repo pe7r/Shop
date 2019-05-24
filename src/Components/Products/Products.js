@@ -4,10 +4,11 @@ import {NavLink} from 'react-router-dom'
 import ProductCard from '../ProductCard/ProductCard'
 import './Products.css'
 import FiltersList from '../Filters/FiltersList'
+import Pagination from '../Pagination/Pagination'
 
 class Products extends React.Component {
     render() {
-        const { productsList, onPageForward, onPageBack } = this.props;
+        const { productsList, onPageForward, onPageBack, actualPage, totalCount } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -41,14 +42,10 @@ class Products extends React.Component {
                             { productList }
                         </div>
                     </div>
-                    <div>
-                        <button onClick={onPageBack}>
-                            Back
-                        </button>
-                        <button onClick={onPageForward}>
-                            Forward
-                        </button>
-                    </div>
+                    <Pagination onPageBack={onPageBack}
+                                onPageForward={onPageForward}
+                                actualPage={actualPage}
+                                totalCount={totalCount}/>
                 </section>
             </div>
         )

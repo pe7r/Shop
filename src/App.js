@@ -8,7 +8,8 @@ import Products from './Components/Products/Products';
 class App extends Component {
   state = {
     products: [],
-    actualPage: 1
+    actualPage: 1,
+    totalCount: 0
   }
 
   componentDidMount() {
@@ -16,7 +17,8 @@ class App extends Component {
     .then(response => {
         console.log(response)
         this.setState({ 
-          products: response.data.result.data
+          products: response.data.result.data,
+          totalCount: response.data.result.total_count
          })
     })
   }
@@ -68,14 +70,15 @@ class App extends Component {
 
   render() { 
     let productsList = this.state.products;
-    
     return (
       <BrowserRouter>
         <div>
           <Route exact path='/' render={() => <Homepage productsList={productsList} />} />
           <Route path='/products' render={() => <Products productsList={productsList} 
+                                                          actualPage={this.state.actualPage}
                                                           onPageForward={this.onPageForward}
-                                                          onPageBack={this.onPageBack} />} />
+                                                          onPageBack={this.onPageBack}
+                                                          totalCount={this.state.totalCount} />} />
         </div>
       </BrowserRouter>
     );
