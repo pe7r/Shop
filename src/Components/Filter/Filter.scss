@@ -1,15 +1,18 @@
 .filter__box {
-    background-color: firebrick;
-    border: 2px solid black;
+    border: 1px solid #056551;
+    border-radius: 3px;
     display: none;
     position: absolute;
 }
 
 .filter__box.active {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    padding: 30px;
 }
 
-.filter__button {
+.filter__button, .box__button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,4 +24,11 @@
     font-weight: bold;
     padding: 0 40px;
     position: relative;
+    background-color: white;
+}
+
+.box__button {
+    margin-bottom: 10px;
+    width: 150px;
+    padding: 0 10px;
 }

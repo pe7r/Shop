@@ -7,20 +7,23 @@ import Products from './Components/Products/Products';
 
 class App extends Component {
   state = {
-    products: []
+    products: [],
+    sizes: []
   }
 
   componentDidMount() {
     axios.get('https://qa-api.wovenlyrugs.com/products?page=1&page_size=12&size=runners&group=Rug')
     .then(response => {
         console.log(response)
-        this.setState({ products: response.data.result.data })
+        this.setState({ 
+          products: response.data.result.data
+         })
     })
   }
 
   render() { 
-    let productsList = this.state.products
-    console.log(productsList)
+    let productsList = this.state.products;
+    
     return (
       <BrowserRouter>
         <div>

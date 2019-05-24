@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import './FiltersList.scss'
 import Filter from '../Filter/Filter';
+import filtersData from '../filtersData'
 
 export default class FiltersList extends Component {
   state = {
-    filters: ['Size','Color','Room','Price','Material','Construction','Style'],
     setFilter: ''
   }
 
@@ -36,25 +36,27 @@ export default class FiltersList extends Component {
   }
 
   render() {
-    const {filters, boxShow} = this.state;
-    let filtersList = filters.map(filter => {
+    const {boxShow} = this.state;
+    const buttons = Object.keys(filtersData).map((key) => {
       let active = '';
-      if (filter === this.state.setFilter) {
-        active = 'active'
-    }
-      return <Filter 
-              boxShow={boxShow}
-              key={filter}
-              filter={filter}
-              active={active}
-              chooseFilter={this.chooseFilter}/>
-    })
+      if (key === this.state.setFilter) {
+          active = 'active' 
+      }
+      return <Filter key={key}
+                     name={key}
+                     filterData={filtersData[key]}
+                     chooseFilter={this.chooseFilter}
+                     boxShow={boxShow}
+                     active={active}
+                     />
+    });
+
     return (
         <section 
           className="filters__container"
           ref={ node => this.node = node }>
           <div className="filters__row">
-            { filtersList }
+            {buttons}
           </div>
         </section>
     )

@@ -13,18 +13,22 @@ export default class Filter extends Component {
     }
 
     render() {
+
+        const filterBox = this.props.filterData.map(filter => {
+            return <div key={filter.title} className='box__button'> {filter.title} </div>
+        })
         return (
             <div>
                 <button 
                     className="filter__button"
                     onClick={() => {
                         this.showBox()
-                        this.props.chooseFilter(this.props.filter)
+                        this.props.chooseFilter(this.props.name)
                         }}> 
-                    {this.props.filter} 
+                    {this.props.name}
                 </button>
                 <div className={`filter__box ${this.props.active}`}>
-                    Many variants
+                   {filterBox}
                 </div>
             </div>
         )
