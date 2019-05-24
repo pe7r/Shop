@@ -8,17 +8,62 @@ import Products from './Components/Products/Products';
 class App extends Component {
   state = {
     products: [],
-    sizes: []
+    actualPage: 1
   }
 
   componentDidMount() {
-    axios.get('https://qa-api.wovenlyrugs.com/products?page=1&page_size=12&size=runners&group=Rug')
+    axios.get(`https://qa-api.wovenlyrugs.com/products?page=1&page_size=12&size=runners&group=Rug`)
     .then(response => {
         console.log(response)
         this.setState({ 
           products: response.data.result.data
          })
     })
+  }
+
+
+  onPageForward = () => {
+    this.setState(prevState => {
+      return {actualPage: prevState.actualPage + 1}
+    },
+      () =>
+        axios
+          .get(
+            `https://qa-api.wovenlyrugs.com/products?page=${
+              this.state.actualPage
+            }&page_size=12&size=runners&group=Rug`
+          )
+          .then(response => {
+            this.setState({
+              products: response.data.result.data,
+            });
+          })
+          .catch(error => {
+            console.log(error);
+          })
+    );
+  }
+
+  onPageBack = () => {
+    this.setState(prevState => {
+      return {actualPage: prevState.actualPage - 1}
+    },
+      () =>
+        axios
+          .get(
+            `https://qa-api.wovenlyrugs.com/products?page=${
+              this.state.actualPage
+            }&page_size=12&size=runners&group=Rug`
+          )
+          .then(response => {
+            this.setState({
+              products: response.data.result.data,
+            });
+          })
+          .catch(error => {
+            console.log(error);
+          })
+    );
   }
 
   render() { 
@@ -28,7 +73,9 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Route exact path='/' render={() => <Homepage productsList={productsList} />} />
-          <Route path='/products' render={() => <Products productsList={productsList} />} />
+          <Route path='/products' render={() => <Products productsList={productsList} 
+                                                          onPageForward={this.onPageForward}
+                                                          onPageBack={this.onPageBack} />} />
         </div>
       </BrowserRouter>
     );

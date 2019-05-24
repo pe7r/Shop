@@ -7,7 +7,7 @@ import FiltersList from '../Filters/FiltersList'
 
 class Products extends React.Component {
     render() {
-        const { productsList } = this.props;
+        const { productsList, onPageForward, onPageBack } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -40,6 +40,14 @@ class Products extends React.Component {
                         <div className="products__row">
                             { productList }
                         </div>
+                    </div>
+                    <div>
+                        <button onClick={onPageBack}>
+                            Back
+                        </button>
+                        <button onClick={onPageForward}>
+                            Forward
+                        </button>
                     </div>
                 </section>
             </div>
