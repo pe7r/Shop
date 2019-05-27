@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Pagination.scss'
+import { leftArrow, rightArrow } from '../Icons/Icons'
 
 export default class Pagination extends Component {
     render() {
@@ -17,15 +18,20 @@ export default class Pagination extends Component {
             disabledForward = 'disabled'
         }
         return (
-            <div className='pagination__container'>
-                <button onClick={onPageBack} disabled={disabledBack}>
-                    Back
+            
+            <div className='pagination__container button-right'>
+                <button onClick={onPageBack}
+                        disabled={disabledBack}
+                        className="pagination__button">
+                    {leftArrow}
                 </button>
-                <div>
+                <div className="pagination__info">
                     On page {actualPage} of {pageCount}
                 </div>
-                <button onClick={onPageForward} disabled={disabledForward}>
-                    Forward
+                <button onClick={onPageForward}
+                        disabled={disabledForward}
+                        className="pagination__button button-right">
+                    {rightArrow}
                 </button>
             </div>
         )

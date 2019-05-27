@@ -1,4 +1,10 @@
 .pagination__container {
     display: flex;
-    
+}
+
+.pagination__button {
+    padding: 11px 23px;
+    color: green;
+    border: 1px solid green;
+    background-color: white;
 }
