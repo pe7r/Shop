@@ -19,14 +19,14 @@ export default class Pagination extends Component {
         }
         return (
             
-            <div className='pagination__container button-right'>
+            <div className='pagination__container'>
                 <button onClick={onPageBack}
                         disabled={disabledBack}
-                        className="pagination__button">
+                        className="pagination__button button-left">
                     {leftArrow}
                 </button>
                 <div className="pagination__info">
-                    On page {actualPage} of {pageCount}
+                    PAGE {actualPage} OF {pageCount}
                 </div>
                 <button onClick={onPageForward}
                         disabled={disabledForward}

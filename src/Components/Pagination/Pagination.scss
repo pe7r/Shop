@@ -1,5 +1,6 @@
 .pagination__container {
     display: flex;
+    padding: 50px;
 }
 
 .pagination__button {
@@ -7,4 +8,19 @@
     color: green;
     border: 1px solid green;
     background-color: white;
+}
+
+.pagination__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: green;
+    border: 1px solid green;
+    min-width: 180px;
+}
+
+@media (max-width: 767px) {
+    .pagination__container {
+        padding: 20px 0px;
+    }
 }

@@ -10,6 +10,7 @@
     justify-content: center;
     max-width: 1320px;
     padding: 0 10px;
+    margin-bottom: -20px;
 }
 
 .products__row {
@@ -64,6 +65,10 @@
     .products__row {
         justify-content: space-around;
         padding: 0 5px;
+    }
+
+    .products__list {
+        margin-bottom: -10px;
     }
 }
 
