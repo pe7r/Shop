@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import {NavLink} from 'react-router-dom'
 import ProductCard from '../ProductCard/ProductCard'
 import './Products.css'
 import FiltersList from '../Filters/FiltersList'
 import Pagination from '../Pagination/Pagination'
+import Header from '../Header/Header';
 
 class Products extends React.Component {
     render() {
@@ -27,10 +27,8 @@ class Products extends React.Component {
 
         return (
             <div className="products__container">
-                <header className='products__header'>
-                    <h1> Products </h1>
-                    <NavLink to="/"> Homepage </NavLink>
-                    <NavLink to="/products"> Products </NavLink>
+                <header>
+                    <Header />
                     <div className="products__filters">
                         <FiltersList />
                     </div>
