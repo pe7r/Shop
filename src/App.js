@@ -44,6 +44,7 @@ class App extends Component {
             console.log(error);
           })
     );
+    window.scrollTo(0, 0)
   }
 
   onPageBack = () => {
@@ -66,6 +67,7 @@ class App extends Component {
             console.log(error);
           })
     );
+    window.scrollTo(0, 0)
   }
 
   render() { 
