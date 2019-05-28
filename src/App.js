@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios'
 import './App.css';
 import Homepage from './Components/Homepage/Homepage';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Products from './Components/Products/Products';
+import ServiceApi from './ServiceApi';
 
 class App extends Component {
+
+  serviceApi = new ServiceApi();
+  
   state = {
     products: [],
     actualPage: 1,
@@ -13,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://qa-api.wovenlyrugs.com/products?page=1&page_size=12&size=runners&group=Rug`)
+    ServiceApi.getProductsList(this.state.actualPage)
     .then(response => {
         console.log(response)
         this.setState({ 
@@ -29,12 +32,7 @@ class App extends Component {
       return {actualPage: prevState.actualPage + 1}
     },
       () =>
-        axios
-          .get(
-            `https://qa-api.wovenlyrugs.com/products?page=${
-              this.state.actualPage
-            }&page_size=12&size=runners&group=Rug`
-          )
+      ServiceApi.getProductsList(this.state.actualPage)
           .then(response => {
             this.setState({
               products: response.data.result.data,
@@ -52,12 +50,7 @@ class App extends Component {
       return {actualPage: prevState.actualPage - 1}
     },
       () =>
-        axios
-          .get(
-            `https://qa-api.wovenlyrugs.com/products?page=${
-              this.state.actualPage
-            }&page_size=12&size=runners&group=Rug`
-          )
+      ServiceApi.getProductsList(this.state.actualPage)
           .then(response => {
             this.setState({
               products: response.data.result.data,
