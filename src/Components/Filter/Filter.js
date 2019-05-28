@@ -12,6 +12,21 @@ export default class Filter extends Component {
           return {boxShow: !prevState.boxShow}
         })
     }
+    
+      handleClick = (e) => {
+        if (this.node.contains(e.target)) {
+          return;
+        }
+        this.props.handleClickOutside();
+      }
+    
+      componentWillMount = () => {
+        document.addEventListener('mousedown', this.handleClick, false)
+      }
+    
+      componentWillUnmount = () => {
+        document.removeEventListener('mousedown', this.handleClick, false)
+      }
 
     render() {
         const { filterData, chooseFilter, active, name } = this.props;
@@ -19,7 +34,7 @@ export default class Filter extends Component {
             return <div key={filter.title} className='box__button'> {filter.title} </div>
         })
         return (
-            <div>
+            <div ref={ node => this.node = node }>
                 <button 
                     className="filter__button"
                     onClick={() => {
