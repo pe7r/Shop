@@ -13,7 +13,7 @@ export default class Header extends Component {
                     </div>
                     <div className="header__search">
                         {searchIcon}
-                        <input placeholder="Search"></input>
+                        <input className="header__search--input" placeholder="Search"></input>
                     </div>
                 </div>
                 <div className="header__right">

@@ -40,7 +40,7 @@ export default class FiltersList extends Component {
     const buttons = Object.keys(filtersData).map((key) => {
       let active = '';
       if (key === this.state.setFilter) {
-          active = 'active' 
+          active = 'filter__box--active' 
       }
       return <Filter key={key}
                      name={key}

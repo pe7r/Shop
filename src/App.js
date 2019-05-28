@@ -26,7 +26,6 @@ class App extends Component {
     })
   }
 
-
   onPageForward = () => {
     this.setState(prevState => {
       return {actualPage: prevState.actualPage + 1}
