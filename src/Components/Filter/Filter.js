@@ -32,13 +32,18 @@ export default class Filter extends Component {
                     {name}
                 </button>
                 <div>
-                <div className={`filter__box ${active}`}
-                    >
-                   {filterBox}
-                   <button className="box__button--apply"
+                <div className={`filter__box ${active}`}>
+                    <div className="filter__box--container">
+                        <div className="filter__box--list">
+                            {filterBox}
+                        </div>
+                        <button className="box__button--apply"
                            onClick={applyChanges}>
-                        Apply
-                    </button>
+                            Apply
+                        </button>
+                    </div>
+                   
+                   
                 </div>
                 </div>
             </div>
