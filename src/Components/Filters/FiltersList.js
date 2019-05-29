@@ -2,18 +2,25 @@ import React, { Component } from 'react'
 import './FiltersList.scss'
 import Filter from '../Filter/Filter';
 import filtersData from '../filtersData'
-import ChoosedFilters from '../ChoosedFilters/ChoosedFilters';
+import ChoosedFilters from '../ChoosedFilters/ChoosedFilters'
 
 export default class FiltersList extends Component {
   state = {
     setFilter: '',
     choosedFilters: [],
-    choosed: false
+    choosed: false,
+    showFilterChoice: false
   }
 
   chooseFilter = (id) => {
     this.setState({
       setFilter: id
+    })
+  }
+
+  setChoice = () => {
+    this.setState({
+      showFilterChoice: true
     })
   }
 
@@ -37,9 +44,15 @@ export default class FiltersList extends Component {
   }
 
   applyChanges = () => {
+    this.setChoice()
     this.setState({
       setFilter: ''
     })
+    if (this.state.choosedFilters.length < 1) {
+      this.setState({
+        showFilterChoice: false
+      })
+    }
   }
 
   render() {
@@ -61,13 +74,12 @@ export default class FiltersList extends Component {
     });
 
     return (
-        <section 
-          className="filters__container"
-        >
+        <section className="filters__container">
           <div className="filters__row">
             {buttons}
           </div>
-          <ChoosedFilters choosedFilters={choosedFilters}/>
+          <ChoosedFilters choosedFilters={choosedFilters}
+                          showFilterChoice={this.state.showFilterChoice}/>
         </section>
     )
   }
