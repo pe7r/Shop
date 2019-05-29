@@ -6,9 +6,10 @@ export default class ChoosedFilters extends Component {
         const { showFilterChoice } = this.props;
         const choosedFilters = this.props.choosedFilters.map(filter => {
             return (
-                <button key={filter} className="choosed__button">
-                    {filter} ✖
-                </button>
+                <div key={filter} className="choosed__button">
+                    {filter} 
+                    <button> ✖ </button>
+                </div>
             )
         })
         return (
