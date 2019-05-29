@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Filter.scss'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';import
+FilterBox from '../FilterBox/FilterBox';
 
 export default class Filter extends Component {
     state = {
@@ -12,29 +13,16 @@ export default class Filter extends Component {
           return {boxShow: !prevState.boxShow}
         })
     }
-    
-      handleClick = (e) => {
-        if (this.node.contains(e.target)) {
-          return;
-        }
-        this.props.handleClickOutside();
-      }
-    
-      componentWillMount = () => {
-        document.addEventListener('mousedown', this.handleClick, false)
-      }
-    
-      componentWillUnmount = () => {
-        document.removeEventListener('mousedown', this.handleClick, false)
-      }
 
     render() {
-        const { filterData, chooseFilter, active, name } = this.props;
+        const { filterData, chooseFilter, active, name, handleBoxChoose, applyChanges } = this.props;
         const filterBox = filterData.map(filter => {
-            return <div key={filter.title} className='box__button'> {filter.title} </div>
+            return <FilterBox filter={filter}
+                              key={filter.title}
+                              handleBoxChoose={handleBoxChoose}/>
         })
         return (
-            <div ref={ node => this.node = node }>
+            <div>
                 <button 
                     className="filter__button"
                     onClick={() => {
@@ -43,8 +31,20 @@ export default class Filter extends Component {
                         }}> 
                     {name}
                 </button>
+                <div>
                 <div className={`filter__box ${active}`}>
-                   {filterBox}
+                    <div className="filter__box--container">
+                        <div className="filter__box--list">
+                            {filterBox}
+                        </div>
+                        <button className="box__button--apply"
+                           onClick={applyChanges}>
+                            Apply
+                        </button>
+                    </div>
+                   
+                   
+                </div>
                 </div>
             </div>
         )
@@ -53,7 +53,7 @@ export default class Filter extends Component {
 
 Filter.propTypes = {
     filterData: PropTypes.array.isRequired,
-    chooseFilte: PropTypes.func.isRequired,
+    chooseFilter: PropTypes.func.isRequired,
     active: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired
 };

@@ -20,3 +20,7 @@ input:focus,
 div:focus {
     outline: none;
 }
+
+button {
+  cursor: pointer;
+}

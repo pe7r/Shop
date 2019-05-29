@@ -28,7 +28,7 @@ class ProductCard extends React.Component {
         let colorsList = this.state.colors.map(color => {
             let active ='';
             if (color === this.state.setColor) {
-                active = 'active'
+                active = 'colors__border--active'
             }
             return (
                 <div 
