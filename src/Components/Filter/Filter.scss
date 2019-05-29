@@ -1,19 +1,21 @@
 .filter__box {
     border: 1px solid #056551;
     border-radius: 3px;
-    display: none;
+    visibility: hidden;
     position: absolute;
 }
 
 .filter__box.filter__box--active {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
     background-color: white;
-    padding: 30px;
     margin-top: 10px;
+    padding: 20px;
+    visibility: visible;
 }
 
-.filter__button, .box__button {
+.filter__button {
     display: flex;
     justify-content: center;
     align-items: center;
