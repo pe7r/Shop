@@ -7,13 +7,39 @@ class ProductCard extends React.Component {
     static defaultProps = {
         theme: ''
     }
+    state = {
+        colors: ['black', 'blue', 'brown','red', 'orange','yellow'],
+        setColor: 'black'
+    }
+
+    chooseColor = (id) => {
+        this.setState({
+            setColor: id
+        })
+    }
 
     render() {
-        const { theme, title, oldPrice, price, image } = this.props;
+        const { theme, title, oldPrice, price, image} = this.props;
 
         const imgStyles = {
             backgroundImage: `url(${image})`
         }
+
+        let colorsList = this.state.colors.map(color => {
+            let active ='';
+            if (color === this.state.setColor) {
+                active = 'active'
+            }
+            return (
+                <div 
+                    key={color}
+                    className={`colors__border ${active}`} 
+                    onClick={() => this.chooseColor(color)}>
+                    <span className="colors__dot" style={{'backgroundColor': color}}></span>
+                </div>
+            )
+        
+        }) 
 
         return (
             <div className={`productcard ${theme}`}>
@@ -30,24 +56,7 @@ class ProductCard extends React.Component {
                     </div>
 
                     <div className="productcard__colors">
-                        <div className="colors__border--active">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
-                        <div className="colors__border">
-                            <span className="colors__dot"></span>
-                        </div>
+                        { colorsList }
                     </div>
                 </div>
             </div>

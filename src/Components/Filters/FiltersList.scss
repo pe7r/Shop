@@ -1,0 +1,17 @@
+.filters__row {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: grey;
+    padding: 20px 110px;
+    margin-bottom: 40px;
+}
+
+.filters__box {
+    background-color: firebrick;
+    border: 2px solid black;
+    display: none;
+}
+
+.filters__box.active {
+    display: block;
+}

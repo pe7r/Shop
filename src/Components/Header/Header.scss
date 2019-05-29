@@ -1,0 +1,45 @@
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 65px;
+}
+
+.header__search {
+    display: flex;
+    align-items: center;
+}
+
+.header__search--input {
+    border: none;
+    height: 40px;
+    margin-left: 20px;
+}
+
+.header__logo {
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.header__left, .header__right {
+    display: flex;
+    align-items: center;
+}
+
+.header__right a {
+    color: black;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.header__right a:visited {
+    color: black;
+}
+
+.header__container button {
+    height: 65px;
+    border: none;
+    width: 50px;
+    border: 0px 1px solid grey;
+}

@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import {NavLink} from 'react-router-dom'
 import ProductCard from '../ProductCard/ProductCard'
-
 import './Products.css'
+import FiltersList from '../Filters/FiltersList'
+import Pagination from '../Pagination/Pagination'
+import Header from '../Header/Header';
 
 class Products extends React.Component {
     render() {
-        const { productsList } = this.props;
+        const { productsList, onPageForward, onPageBack, actualPage, totalCount } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -25,19 +26,25 @@ class Products extends React.Component {
             )
 
         return (
-            <div>
-            <section className='products__content'>
-                <header className='products__header'>
-                    <h1> Products </h1>
-                    <NavLink to="/"> Homepage </NavLink>
-                    <NavLink to="/products"> Products </NavLink>
-                </header>
-                <div className="products__list">
-                    <div className="products__row">
-                        { productList }
+            <div className="products__container">
+                <header>
+                    <Header />
+                    <div className="products__filters">
+                        <FiltersList />
                     </div>
-                </div>
-            </section>
+                </header>
+                 
+                <section className='products__content'>
+                    <div className="products__list">
+                        <div className="products__row">
+                            { productList }
+                        </div>
+                    </div>
+                    <Pagination onPageBack={onPageBack}
+                                onPageForward={onPageForward}
+                                actualPage={actualPage}
+                                totalCount={totalCount}/>
+                </section>
             </div>
         )
     }

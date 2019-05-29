@@ -2,18 +2,15 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-}
-
-.products__header {
-    display: flex;
+    align-items: center;
 }
 
 .products__list {
     display: flex;
     justify-content: center;
     max-width: 1320px;
-    align-self: center;
     padding: 0 10px;
+    margin-bottom: -20px;
 }
 
 .products__row {
@@ -29,6 +26,11 @@
     margin-bottom: 20px;
     box-sizing: border-box;
     padding: 0 10px;   
+}
+
+.products__filters {
+    display: block;
+    width: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -63,6 +65,10 @@
     .products__row {
         justify-content: space-around;
         padding: 0 5px;
+    }
+
+    .products__list {
+        margin-bottom: -10px;
     }
 }
 

@@ -1,22 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {NavLink} from 'react-router-dom'
 import SliderPopular from '../Sliders/Popular/SliderPopular'
 import './Homepage.css'
 import SliderNew from '../Sliders/New/SliderNew';
+import Header from '../Header/Header';
 
 const Homepage = (props) => {
     const { productsList } = props;
     return (
             <section className='homepage__container'>
+                <header>
+                    <Header />
+                </header>
                 <div className="homepage__content">
-                    <header>
-                        <h1> Homepage </h1>
-                        <div className="header__links">
-                            <NavLink to="/"> Homepage </NavLink>
-                            <NavLink to="/products"> Products </NavLink>
-                        </div>
-                    </header>
                     <div className="homepage__slider-popular__row">
                         <SliderPopular 
                             productsList={ productsList }

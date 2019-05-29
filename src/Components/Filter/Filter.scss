@@ -1,0 +1,35 @@
+.filter__box {
+    border: 1px solid #056551;
+    border-radius: 3px;
+    display: none;
+    position: absolute;
+}
+
+.filter__box.filter__box--active {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: white;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.filter__button, .box__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    height: 30px; 
+    border-radius: 5px;
+    border: 2px solid rgba(5, 101, 81, 0.4);
+    color: #056551;
+    font-weight: bold;
+    padding: 0 40px;
+    position: relative;
+    background-color: white;
+}
+
+.box__button {
+    margin-bottom: 10px;
+    width: 150px;
+    padding: 0 10px;
+}

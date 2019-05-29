@@ -74,7 +74,7 @@
     visibility: visible;
 }
 
-.colors__border--active {
+.colors__border.active {
     display: flex;
     border-radius: 50%;
     border: 2px solid black;
@@ -82,6 +82,7 @@
     align-items: center;
     margin-right: 2.5px;
     padding: 3px;
+    visibility: visible;
 }
 
 .productcard.popular {
@@ -106,8 +107,9 @@
         visibility: hidden;
     }
 
-    .colors__border--active {
+    .colors__border.active {
         margin-right: 1.5px;
+        visibility: visible;
     }
 }
 
@@ -134,7 +136,7 @@
         height: 27px;
     }
 
-    .colors__border, .colors__border--active {
+    .colors__border, .colors__border.active {
         padding: 5px;
         border-width: 1px;
     }
@@ -190,7 +192,7 @@
         padding-top: 12px;
     }
 
-    .colors__border--active {
+    .colors__border.active {
         padding: 2px;
     }
 
@@ -264,7 +266,7 @@
         visibility: hidden;
     }
 
-    .colors__border--active {
+    .colors__border.active {
         display: flex;
         border-radius: 50%;
         border: 2px solid black;
