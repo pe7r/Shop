@@ -17,10 +17,10 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <div className="header__right">
-                    <a href="#"> Shag </a>
-                    <a href="#"> Contemporary </a>
-                    <a href="#"> More Styles {arrowDown} </a>
-                    <a href="#"> Sale </a>
+                    <NavLink to="/"> Shag </NavLink>
+                    <NavLink to="/"> Contemporary </NavLink>
+                    <NavLink to="/"> More Styles {arrowDown} </NavLink>
+                    <NavLink to="/"> Sale </NavLink>
                     <NavLink to="/products"> Shop All Rugs </NavLink>
                     <button>{contactIcon}</button>
                     <button>{cartIcon}</button>
