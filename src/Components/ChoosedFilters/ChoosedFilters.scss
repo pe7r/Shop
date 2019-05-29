@@ -1,0 +1,23 @@
+.choosed__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 50px;
+    background-color: white;
+}
+
+.choosed__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    height: 30px; 
+    border-radius: 5px;
+    border: 2px solid rgba(5, 101, 81, 0.4);
+    color: #056551;
+    font-weight: bold;
+    padding: 0 40px;
+    position: relative;
+    background-color: white;
+}
+
