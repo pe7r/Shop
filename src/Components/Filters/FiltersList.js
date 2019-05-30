@@ -44,11 +44,12 @@ export default class FiltersList extends Component {
   }
 
   applyChanges = () => {
+    const { choosedFilters } = this.state;
     this.setChoice()
     this.setState({
       setFilter: ''
     })
-    if (this.state.choosedFilters.length < 1) {
+    if (choosedFilters.length < 1) {
       this.setState({
         showFilterChoice: false
       })
@@ -56,7 +57,7 @@ export default class FiltersList extends Component {
   }
 
   render() {
-    const {boxShow, setFilter, choosedFilters} = this.state;
+    const {boxShow, setFilter, choosedFilters, showFilterChoice} = this.state;
     const buttons = Object.keys(filtersData).map((key) => {
       let active = '';
       if (key === setFilter) {
@@ -79,7 +80,7 @@ export default class FiltersList extends Component {
             {buttons}
           </div>
           <ChoosedFilters choosedFilters={choosedFilters}
-                          showFilterChoice={this.state.showFilterChoice}/>
+                          showFilterChoice={showFilterChoice}/>
         </section>
     )
   }

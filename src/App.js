@@ -16,7 +16,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    ServiceApi.getProductsList(this.state.actualPage)
+    const { actualPage } = this.state;
+    ServiceApi.getProductsList(actualPage)
     .then(response => {
         console.log(response)
         this.setState({ 
@@ -27,11 +28,12 @@ class App extends Component {
   }
 
   onPageForward = () => {
+    const { actualPage } = this.state;
     this.setState(prevState => {
       return {actualPage: prevState.actualPage + 1}
     },
       () =>
-      ServiceApi.getProductsList(this.state.actualPage)
+      ServiceApi.getProductsList(actualPage)
           .then(response => {
             this.setState({
               products: response.data.result.data,
@@ -45,11 +47,12 @@ class App extends Component {
   }
 
   onPageBack = () => {
+    const { actualPage } = this.state;
     this.setState(prevState => {
       return {actualPage: prevState.actualPage - 1}
     },
       () =>
-      ServiceApi.getProductsList(this.state.actualPage)
+      ServiceApi.getProductsList(actualPage)
           .then(response => {
             this.setState({
               products: response.data.result.data,
@@ -63,16 +66,16 @@ class App extends Component {
   }
 
   render() { 
-    let productsList = this.state.products;
+    const { actualPage, totalCount, products } = this.state;
     return (
       <BrowserRouter>
         <div>
-          <Route exact path='/' render={() => <Homepage productsList={productsList} />} />
-          <Route path='/products' render={() => <Products productsList={productsList} 
-                                                          actualPage={this.state.actualPage}
+          <Route exact path='/' render={() => <Homepage productsList={products} />} />
+          <Route path='/products' render={() => <Products productsList={products} 
+                                                          actualPage={actualPage}
                                                           onPageForward={this.onPageForward}
                                                           onPageBack={this.onPageBack}
-                                                          totalCount={this.state.totalCount} />} />
+                                                          totalCount={totalCount} />} />
         </div>
       </BrowserRouter>
     );
