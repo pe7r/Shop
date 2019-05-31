@@ -1,0 +1,23 @@
+.mobutton {
+    display: none;
+    height: 50px;
+    width: 50px;
+    border-left: 1px solid #e5e5e5;
+    background-color: white;
+    position: relative;
+}
+
+.mobutton__hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+@media (max-width: 1023px) {
+    .mobutton {
+        display: block;
+    }
+    .mobutton__hidden.mobutton__active {
+        display: block;
+        margin-top: 30px;
+    }
+}
