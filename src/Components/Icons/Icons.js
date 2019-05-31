@@ -24,7 +24,6 @@ const rightArrow = <svg width="21" height="12" viewBox="0 0 21 12" fill="none" x
                             </svg>
 
 const searchIcon = <svg
-                    style={{ marginLeft: '20px' }}
                     width="20"
                     height="20"
                     viewBox="0 0 20 20"
@@ -101,4 +100,17 @@ const cartIcon = <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xml
                     />
                 </svg>
 
-export { arrowDown, leftArrow, rightArrow, logo, searchIcon, contactIcon, cartIcon }
+const moreOptions = <svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0H15V1H0V0Z" fill="black"/>
+                      <path d="M0 4H15V5H0V4Z" fill="black"/>
+                      <path d="M0 8H15V9H0V8Z" fill="black"/>
+                      <path d="M0 12H15V13H0V12Z" fill="black"/>
+                    </svg>
+export { arrowDown,
+         leftArrow,
+         rightArrow,
+         logo,
+         searchIcon,
+         contactIcon,
+         cartIcon,
+         moreOptions }
