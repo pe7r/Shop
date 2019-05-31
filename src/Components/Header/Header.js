@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
 import '../Header/Header.scss'
-import {logo, searchIcon, contactIcon, cartIcon, arrowDown} from '../Icons/Icons'
+import {logo, searchIcon, contactIcon, cartIcon, arrowDown, moreOptions} from '../Icons/Icons'
+import SearchInput from '../SearchInput/SearchInput';
+import MobileButton from '../MobileButton/MobileButton';
 
 export default class Header extends Component {
     render() {
@@ -13,7 +15,7 @@ export default class Header extends Component {
                     </div>
                     <div className="header__search">
                         {searchIcon}
-                        <input className="header__search--input" placeholder="Search"></input>
+                        <SearchInput />
                     </div>
                 </div>
                 <div className="header__right">
@@ -22,8 +24,17 @@ export default class Header extends Component {
                     <NavLink to="/"> More Styles {arrowDown} </NavLink>
                     <NavLink to="/"> Sale </NavLink>
                     <NavLink to="/products"> Shop All Rugs </NavLink>
-                    <button>{contactIcon}</button>
-                    <button>{cartIcon}</button>
+                    <MobileButton inside={<SearchInput />}
+                                  icon={searchIcon}/>
+                    <button className="header__right--button">
+                        {contactIcon}
+                    </button>
+                    <button className="header__right--button">
+                        {cartIcon}
+                    </button>
+                    <button className="header__right--button header__hidden--button">
+                        {moreOptions}
+                    </button>
                 </div>
             </div>
         )

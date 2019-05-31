@@ -11,12 +11,6 @@
     align-items: center;
 }
 
-.header__search--input {
-    border: none;
-    height: 40px;
-    margin-left: 20px;
-}
-
 .header__logo {
     padding: 20px;
     margin-top: 10px;
@@ -27,15 +21,37 @@
     align-items: center;
 }
 
+.header__right--button {
+    height: 65px;
+    width: 50px;
+    border-left: 1px solid #e5e5e5;
+    background-color: white;
+    position: relative;
+}
+
 .header__right a{
     color: black;
     font-weight: bold;
     margin-right: 20px;
 }
 
-.header__container button {
-    height: 65px;
-    border: none;
-    width: 50px;
-    border: 0px 1px solid grey;
+@media (max-width: 1023px) {
+    .header__container {
+        height: 50px;
+    }
+    .header__right a {
+        display: none;
+    }
+
+    .header__right--button {
+        height: 50px;
+    }
+
+    .header__hidden--button {
+        display: block;
+    }
+
+    .header__search {
+        display: none;
+    }
 }
