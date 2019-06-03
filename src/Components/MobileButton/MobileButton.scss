@@ -17,7 +17,7 @@
         display: block;
     }
     .mobutton__hidden.mobutton__active {
-        display: block;
-        margin-top: 30px;
+        visibility: visible;
+        margin-top: 10px;
     }
 }
