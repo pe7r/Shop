@@ -26,9 +26,10 @@ export default class MobileButton extends Component {
                         onClick={this.doVisible}>
                     {icon}
                 </button>
-                    <div className={`mobutton__hidden ${activeButton}`}>
-                        {inside}
-                    </div>
+                <div className={`mobutton__hidden ${activeButton}`}>
+                    {inside}
+                    <button onClick={this.doVisible}> Close </button>
+                </div>
             </div>
         )
     }
