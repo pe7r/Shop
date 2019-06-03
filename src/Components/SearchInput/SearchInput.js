@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import Header from '../Header/Header';
-
-Filt
+import './SearchInput.scss'
 export default class SearchInput extends Component {
     render() {
         return (
