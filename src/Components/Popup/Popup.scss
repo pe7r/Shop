@@ -1,0 +1,13 @@
+.popup__container {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .popup__container.popup__active {
+        display: flex;
+        position: absolute;
+        z-index: 1;
+        background-color: crimson;
+        width: 100%;
+    }
+}

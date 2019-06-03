@@ -14,7 +14,7 @@ export default class MobileButton extends Component {
 
     render() {
         const { hiddenButton } = this.state;
-        const { icon, inside } = this.props;
+        const { icon, inside, handlePopupChange, popup } = this.props;
         let activeButton;
         if (!hiddenButton) {
             activeButton = 'mobutton__active'
@@ -23,7 +23,7 @@ export default class MobileButton extends Component {
         return (
             <div>
                 <button className="mobutton"
-                        onClick={this.doVisible}>
+                        onClick={() => handlePopupChange(popup)}>
                     {icon}
                 </button>
                 <div className={`mobutton__hidden ${activeButton}`}>

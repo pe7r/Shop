@@ -4,10 +4,41 @@ import '../Header/Header.scss'
 import {logo, searchIcon, contactIcon, cartIcon, arrowDown, moreOptions} from '../Icons/Icons'
 import SearchInput from '../SearchInput/SearchInput';
 import MobileButton from '../MobileButton/MobileButton';
+import Popup from '../Popup/Popup';
+
 
 export default class Header extends Component {
+    state = {
+        activatePopup: false,
+        setPopup: ''
+    }
+
+    handlePopupChange = (id) => {
+        this.setState({
+            activatePopup: true,
+            setPopup: id
+        })
+    }
+
+    closePopup = () => {
+        this.setState({
+            activatePopup: false
+        })
+    }
+
     render() {
+        const { setPopup, activatePopup } = this.state;
+
+        const moreOptionsButton = (<button className="header__right--button header__hidden--button">
+                                    {moreOptions}
+                                </button>)
+
+        let activePopup = '';
+        if (activatePopup) {
+            activePopup = 'popup__active';
+        }
         return (
+        <div>
             <div className="header__container">
                 <div className="header__left">
                     <div className="header__logo">
@@ -25,18 +56,26 @@ export default class Header extends Component {
                     <NavLink to="/"> Sale </NavLink>
                     <NavLink to="/products"> Shop All Rugs </NavLink>
                     <MobileButton inside={<SearchInput />}
-                                  icon={searchIcon}/>
+                                  icon={searchIcon}
+                                  handlePopupChange={this.handlePopupChange}
+                                  popup={'search'}
+                                  />
                     <button className="header__right--button">
                         {contactIcon}
                     </button>
                     <button className="header__right--button">
                         {cartIcon}
                     </button>
-                    <button className="header__right--button header__hidden--button">
-                        {moreOptions}
-                    </button>
-                </div>
+                    <MobileButton inside={moreOptionsButton}
+                                  icon={moreOptions}
+                                  handlePopupChange={this.handlePopupChange}
+                                  popup={'more options'}/>
+                </div>      
             </div>
+            <Popup parent={setPopup}
+                   active={activePopup}
+                   closePopup={this.closePopup} />
+        </div>
         )
     }
 }

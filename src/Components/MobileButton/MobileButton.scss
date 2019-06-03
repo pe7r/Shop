@@ -2,14 +2,13 @@
     display: none;
     height: 50px;
     width: 50px;
-    border-left: 1px solid #e5e5e5;
+    border: none;
     background-color: white;
-    position: relative;
 }
 
 .mobutton__hidden {
-    visibility: hidden;
-    position: absolute;
+    display: none;
+    position: relative;
 }
 
 @media (max-width: 1023px) {
@@ -17,7 +16,11 @@
         display: block;
     }
     .mobutton__hidden.mobutton__active {
-        visibility: visible;
-        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        background-color: black;
+        z-index: 1;
+        position: absolute;
     }
 }

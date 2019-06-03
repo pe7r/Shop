@@ -4,6 +4,7 @@
     justify-content: space-between;
     background-color: white;
     height: 65px;
+    position: relative;
 }
 
 .header__search {
@@ -24,7 +25,7 @@
 .header__right--button {
     height: 65px;
     width: 50px;
-    border-left: 1px solid #e5e5e5;
+    border: none;
     background-color: white;
     position: relative;
 }
