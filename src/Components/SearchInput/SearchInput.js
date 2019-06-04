@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './SearchInput.scss'
-export default class SearchInput extends Component {
-    render() {
-        return (
-            <input className="search__input" placeholder="Search"></input>
-        )
-    }
+
+const SearchInput = () => {
+    return (
+        <input className="search__input" placeholder="Search"></input>
+    )
 }
+
+export default SearchInput
+
