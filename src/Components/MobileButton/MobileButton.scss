@@ -1,0 +1,26 @@
+.mobutton {
+    display: none;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: white;
+}
+
+.mobutton__hidden {
+    display: none;
+    position: relative;
+}
+
+@media (max-width: 1023px) {
+    .mobutton {
+        display: block;
+    }
+    .mobutton__hidden.mobutton__active {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        background-color: black;
+        z-index: 1;
+        position: absolute;
+    }
+}

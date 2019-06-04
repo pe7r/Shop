@@ -3,8 +3,8 @@ import './ChoosedFilters.scss'
 
 export default class ChoosedFilters extends Component {
     render() {
-        const { showFilterChoice } = this.props;
-        const choosedFilters = this.props.choosedFilters.map(filter => {
+        const { showFilterChoice, choosedFilters } = this.props;
+        const chooseFilters = choosedFilters.map(filter => {
             return (
                 <div key={filter} className="choosed__button">
                     {filter} 
@@ -14,7 +14,7 @@ export default class ChoosedFilters extends Component {
         })
         return (
             <div className="choosed__container">
-                {showFilterChoice ? choosedFilters : null}
+                {showFilterChoice ? chooseFilters : null}
             </div>
         )
     }

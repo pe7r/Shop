@@ -16,7 +16,7 @@ class SliderNew extends React.Component {
     }
 
     render() {
-        const { productsList } = this.props
+        const { productsList } = this.props;
 
         const productList = productsList.map(product => 
             

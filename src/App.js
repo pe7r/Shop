@@ -6,8 +6,6 @@ import Products from './Components/Products/Products';
 import ServiceApi from './ServiceApi';
 
 class App extends Component {
-
-  serviceApi = new ServiceApi();
   
   state = {
     products: [],
@@ -16,9 +14,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    ServiceApi.getProductsList(this.state.actualPage)
+    const { actualPage } = this.state;
+    ServiceApi.getProductsList(actualPage)
     .then(response => {
-        console.log(response)
         this.setState({ 
           products: response.data.result.data,
           totalCount: response.data.result.total_count
@@ -26,53 +24,36 @@ class App extends Component {
     })
   }
 
-  onPageForward = () => {
-    this.setState(prevState => {
-      return {actualPage: prevState.actualPage + 1}
-    },
-      () =>
-      ServiceApi.getProductsList(this.state.actualPage)
+  changingPage = (cond) => {
+    const {actualPage} = this.state;
+    let nextPage;
+    if (cond === 'next') {
+      nextPage = actualPage + 1
+    } else if (cond === 'prev') {
+      nextPage = actualPage - 1
+    }
+    ServiceApi.getProductsList(nextPage)
           .then(response => {
             this.setState({
               products: response.data.result.data,
-            });
+              actualPage: nextPage
+            })
           })
           .catch(error => {
             console.log(error);
           })
-    );
-    window.scrollTo(0, 0)
-  }
-
-  onPageBack = () => {
-    this.setState(prevState => {
-      return {actualPage: prevState.actualPage - 1}
-    },
-      () =>
-      ServiceApi.getProductsList(this.state.actualPage)
-          .then(response => {
-            this.setState({
-              products: response.data.result.data,
-            });
-          })
-          .catch(error => {
-            console.log(error);
-          })
-    );
-    window.scrollTo(0, 0)
   }
 
   render() { 
-    let productsList = this.state.products;
+    const { actualPage, totalCount, products } = this.state;
     return (
       <BrowserRouter>
         <div>
-          <Route exact path='/' render={() => <Homepage productsList={productsList} />} />
-          <Route path='/products' render={() => <Products productsList={productsList} 
-                                                          actualPage={this.state.actualPage}
-                                                          onPageForward={this.onPageForward}
-                                                          onPageBack={this.onPageBack}
-                                                          totalCount={this.state.totalCount} />} />
+          <Route exact path='/' render={() => <Homepage productsList={products} />} />
+          <Route path='/products' render={() => <Products productsList={products} 
+                                                          actualPage={actualPage}
+                                                          totalCount={totalCount}
+                                                          changingPage={this.changingPage} />} />
         </div>
       </BrowserRouter>
     );

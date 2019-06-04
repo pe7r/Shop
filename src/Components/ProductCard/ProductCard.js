@@ -20,14 +20,15 @@ class ProductCard extends React.Component {
 
     render() {
         const { theme, title, oldPrice, price, image} = this.props;
+        const { colors, setColor } = this.state;
 
         const imgStyles = {
             backgroundImage: `url(${image})`
         }
 
-        let colorsList = this.state.colors.map(color => {
+        let colorsList = colors.map(color => {
             let active ='';
-            if (color === this.state.setColor) {
+            if (color === setColor) {
                 active = 'colors__border--active'
             }
             return (

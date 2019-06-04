@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 
 class Products extends React.Component {
     render() {
-        const { productsList, onPageForward, onPageBack, actualPage, totalCount } = this.props;
+        const { productsList, actualPage, totalCount, changingPage } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -40,10 +40,9 @@ class Products extends React.Component {
                             { productList }
                         </div>
                     </div>
-                    <Pagination onPageBack={onPageBack}
-                                onPageForward={onPageForward}
-                                actualPage={actualPage}
-                                totalCount={totalCount}/>
+                    <Pagination actualPage={actualPage}
+                                totalCount={totalCount}
+                                changingPage={changingPage}/>
                 </section>
             </div>
         )

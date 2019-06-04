@@ -4,7 +4,7 @@ import { leftArrow, rightArrow } from '../Icons/Icons'
 
 export default class Pagination extends Component {
     render() {
-        const { onPageBack, onPageForward, actualPage, totalCount } = this.props;
+        const { actualPage, totalCount, changingPage } = this.props;
 
         const pageCount = Math.ceil(totalCount/12);
 
@@ -20,7 +20,7 @@ export default class Pagination extends Component {
         return (
             
             <div className='pagination__container'>
-                <button onClick={onPageBack}
+                <button onClick={() => changingPage('prev')}
                         disabled={disabledBack}
                         className="pagination__button button-left">
                     {leftArrow}
@@ -28,7 +28,7 @@ export default class Pagination extends Component {
                 <div className="pagination__info">
                     PAGE {actualPage} OF {pageCount}
                 </div>
-                <button onClick={onPageForward}
+                <button onClick={() => changingPage('next')}
                         disabled={disabledForward}
                         className="pagination__button button-right">
                     {rightArrow}
