@@ -50,11 +50,13 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <div className="header__right">
-                    <NavLink to="/"> Shag </NavLink>
-                    <NavLink to="/"> Contemporary </NavLink>
-                    <NavLink to="/"> More Styles {arrowDown} </NavLink>
-                    <NavLink to="/"> Sale </NavLink>
-                    <NavLink to="/products"> Shop All Rugs </NavLink>
+                    <div className="header__links">
+                        <NavLink to="/"> Shag </NavLink>
+                        <NavLink to="/"> Contemporary </NavLink>
+                        <NavLink to="/"> More Styles {arrowDown} </NavLink>
+                        <NavLink to="/"> Sale </NavLink>
+                        <NavLink to="/products"> Shop All Rugs </NavLink>
+                    </div>
                     <MobileButton inside={<SearchInput />}
                                   icon={searchIcon}
                                   handlePopupChange={this.handlePopupChange}
