@@ -9,32 +9,32 @@ import Popup from '../Popup/Popup';
 
 export default class Header extends Component {
     state = {
-        activatePopup: false,
-        setPopup: ''
+        isPopupActive: false,
+        selectedPopupId: ''
     }
 
     handlePopupChange = (id) => {
         this.setState({
-            activatePopup: true,
-            setPopup: id
+            isPopupActive: true,
+            selectedPopupId: id
         })
     }
 
     closePopup = () => {
         this.setState({
-            activatePopup: false
+            isPopupActive: false
         })
     }
 
     render() {
-        const { setPopup, activatePopup } = this.state;
+        const { selectedPopupId, isPopupActive } = this.state;
 
         const moreOptionsButton = (<button className="header__right--button header__hidden--button">
                                     {moreOptions}
                                 </button>)
 
         let activePopup = '';
-        if (activatePopup) {
+        if (isPopupActive) {
             activePopup = 'popup__active';
         }
         return (
@@ -72,7 +72,7 @@ export default class Header extends Component {
                                   popup={'more options'}/>
                 </div>      
             </div>
-            <Popup parent={setPopup}
+            <Popup parent={selectedPopupId}
                    active={activePopup}
                    closePopup={this.closePopup} />
         </div>
