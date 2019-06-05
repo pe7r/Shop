@@ -3,6 +3,7 @@ import './Popup.scss';
 import SearchInput from '../SearchInput/SearchInput';
 import { closeCross, searchIcon } from '../Icons/Icons';
 import ContactPopup from '../ContactPopup/ContactPopup';
+import OptionsPopup from '../OptionsPopup/OptionsPopup';
 
 export default class Popup extends Component {
     render() {
@@ -17,11 +18,7 @@ export default class Popup extends Component {
         } else if (parent === 'contact') {
             inside = <ContactPopup closePopup={closePopup}/>
         } else if (parent === 'more options') {
-            inside = <div className="popup__leftside">
-                <button>
-                    moreOptions
-                </button>
-            </div>
+            inside = <OptionsPopup />
         }
         return (
             <div className={`popup__container ${active}`}>
