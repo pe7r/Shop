@@ -76,6 +76,7 @@
     .header__logo {
         height: 50px;
         padding: 10px;
+        border: none;
     }
 
     .header__right {
@@ -93,6 +94,7 @@
 
     .header__right--button {
         height: 50px;
+        width: 50px;
     }
 
     .header__hidden--button {
