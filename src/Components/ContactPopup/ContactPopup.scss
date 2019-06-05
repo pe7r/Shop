@@ -1,0 +1,36 @@
+@media (max-width: 1023px) {
+    .contact__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #056551;
+        height: 50px;
+        width: 100%;
+        a {
+            color: white;
+            padding-left: 10px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
+    
+    .contact__links {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-left: 20px;
+    }
+    
+    .contact__message, .contact__call {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 20px;
+    }
+    
+    .contact__close {
+        padding-right: 20px;
+        background-color: #056551;
+        border: none;
+    }
+}

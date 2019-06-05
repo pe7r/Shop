@@ -62,7 +62,7 @@ export default class Header extends Component {
                                   handlePopupChange={this.handlePopupChange}
                                   popup={'search'}
                                   />
-                    <button className="header__right--button">
+                    <button className="header__right--button" onClick={() => this.handlePopupChange('contact')}>
                         {contactIcon}
                     </button>
                     <button className="header__right--button">
