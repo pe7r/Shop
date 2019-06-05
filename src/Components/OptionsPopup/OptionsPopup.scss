@@ -1,0 +1,38 @@
+@media (max-width: 1023px) {
+    .options__container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .options__background {
+        width: 30%;
+    }
+    
+    .options__main {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #056551;
+        width: 70%;
+        color: white;
+        font-family: "GraphikSemibold", Helvetica, Arial;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    .options__list {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .options__item {
+        height: 50px;
+        a {
+            color: white;
+            font-family: "GraphikSemibold", Helvetica, Arial;
+            font-size: 18px;
+        }
+    }
+}
