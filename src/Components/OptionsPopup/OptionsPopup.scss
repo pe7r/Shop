@@ -3,7 +3,9 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
-        min-height: 100vw;
+        height: 100%;
+        overflow-y: scroll;
+        position: fixed;
     }
     
     .options__background {
