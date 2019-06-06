@@ -3,6 +3,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    top: 65px;
 }
 
 .products__list {
@@ -31,9 +32,10 @@
 .products__filters {
     display: block;
     width: 100%;
+    padding-top: 65px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     .products__list {
         padding: 0px;
     }
@@ -51,6 +53,10 @@
         justify-content: space-around;
         box-sizing: border-box;
         padding: 0px 10px;
+    }
+
+    .products__filters {
+        padding-top: 50px;
     }
 }
 

@@ -3,6 +3,8 @@
     max-width: 1320px;
     margin: 0 auto; 
     flex-direction: column; 
+    top: 65px;
+    padding-top: 80px;
 }
 
 .homepage__content header {
