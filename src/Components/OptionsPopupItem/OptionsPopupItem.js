@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
+import './OptionsPopupItem.scss'
 
 export default class OptionsPopupItem extends Component {
     render() {
