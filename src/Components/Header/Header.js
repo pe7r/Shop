@@ -22,7 +22,8 @@ export default class Header extends Component {
 
     closePopup = () => {
         this.setState({
-            isPopupActive: false
+            isPopupActive: false,
+            selectedPopupId: ''
         })
     }
 
@@ -71,6 +72,8 @@ export default class Header extends Component {
                     <MobileButton inside={moreOptionsButton}
                                   icon={moreOptions}
                                   handlePopupChange={this.handlePopupChange}
+                                  closePopup={this.closePopup}
+                                  selectedPopup={selectedPopupId}
                                   popup={'more options'}/>
                 </div>      
             </div>

@@ -10,16 +10,16 @@ const OptionsPopup = () => {
                 <h1>Shop Area Rugs</h1>
                 <div className="options__list">
                     <div className="options__item">
-                        <NavLink>Colors</NavLink>
+                        <NavLink to="">Colors</NavLink>
                     </div>
                     <div className="options__item">
-                        <NavLink>Styles</NavLink>
+                        <NavLink to="">Styles</NavLink>
                     </div>
                     <div className="options__item">
-                        <NavLink>Sizes</NavLink>
+                        <NavLink to="">Sizes</NavLink>
                     </div>
                     <div className="options__item">
-                        <NavLink>Rooms</NavLink>
+                        <NavLink to="">Rooms</NavLink>
                     </div> 
                 </div>
             </div>
