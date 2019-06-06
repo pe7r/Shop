@@ -17,7 +17,7 @@ import {NavLink} from 'react-router-dom'
             </div>
             <button className="contact__close"
                     onClick={closePopup}>
-                <img src="https://media.wovenlyrugs.com/wovenly/close_icon.svg"></img>
+                <img src="https://media.wovenlyrugs.com/wovenly/close_icon.svg" alt="close-button"></img>
             </button>
         </div>
     )
