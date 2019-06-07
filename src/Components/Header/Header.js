@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
 import '../Header/Header.scss'
-import {logo, searchIcon, contactIcon, cartIcon, arrowDown, moreOptions} from '../Icons/Icons'
+import {logo, searchIcon, contactIcon, cartIcon, moreOptions} from '../Icons/Icons'
 import SearchInput from '../SearchInput/SearchInput';
 import MobileButton from '../MobileButton/MobileButton';
 import Popup from '../Popup/Popup';
+import MoreStyles from '../MoreStyles/MoreStyles';
 
 
 export default class Header extends Component {
@@ -52,11 +53,11 @@ export default class Header extends Component {
                 </div>
                 <div className="header__right">
                     <div className="header__links">
-                        <NavLink to="/"> Shag </NavLink>
-                        <NavLink to="/"> Contemporary </NavLink>
-                        <NavLink to="/"> More Styles {arrowDown} </NavLink>
-                        <NavLink to="/"> Sale </NavLink>
-                        <NavLink to="/products"> Shop All Rugs </NavLink>
+                        <NavLink to="/" className="header__navlink"> Shag </NavLink>
+                        <NavLink to="/" className="header__navlink"> Contemporary </NavLink>
+                        <MoreStyles />
+                        <NavLink to="/" className="header__navlink"> Sale </NavLink>
+                        <NavLink to="/products" className="header__navlink"> Shop All Rugs </NavLink>
                     </div>
                     <MobileButton inside={<SearchInput />}
                                   icon={searchIcon}
