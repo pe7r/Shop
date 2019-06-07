@@ -6,7 +6,10 @@ export default class FilterBox extends Component {
     active: false
   }
     render() {
-        const {filter, handleBoxChoose} = this.props;
+        const {
+          filter,
+          handleBoxChoice
+        } = this.props;
         const {active} = this.state;
 
         let styles;
@@ -16,17 +19,16 @@ export default class FilterBox extends Component {
             color: 'white'
           }
         }
-
         return (
             <div>
               <button
                       className='box__button'
                       style={styles}
                       onClick={() => {
-                        handleBoxChoose(filter.title)
                         this.setState(prevState => {
-                          return { active: !prevState.active}
+                          return { active: !prevState.active }
                         })
+                        handleBoxChoice(filter.title)
                       }}
                       > {filter.title}
               </button>
