@@ -8,7 +8,7 @@ import Header from '../Header/Header';
 
 class Products extends React.Component {
     render() {
-        const { productsList, actualPage, totalCount, changingPage } = this.props;
+        const { productsList, actualPage, totalCount, changingPage, onFilterProducts } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -30,7 +30,7 @@ class Products extends React.Component {
                 <header>
                     <Header />
                     <div className="products__filters">
-                        <FiltersList />
+                        <FiltersList onFilterProducts={onFilterProducts}/>
                     </div>
                 </header>
                  
