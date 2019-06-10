@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import './MobileButton.scss'
+import {closeCrossBlack} from '../Icons/Icons'
 
 export default class MobileButton extends Component {
-    state = {
-        hiddenButton: true
-    }
 
     doVisible = () => {
         this.setState(prevState => {
@@ -13,23 +11,20 @@ export default class MobileButton extends Component {
     }
 
     render() {
-        const { hiddenButton } = this.state;
-        const { icon, inside, handlePopupChange, popup } = this.props;
-        let activeButton;
-        if (!hiddenButton) {
-            activeButton = 'mobutton__active'
-        }
+        const { icon, handlePopupChange, popup, closePopup, selectedPopup } = this.props;
 
         return (
             <div>
+                {selectedPopup === 'more options' ? 
+                <button className="mobutton"
+                        onClick={closePopup}>
+                    {closeCrossBlack}
+                </button> 
+                : 
                 <button className="mobutton"
                         onClick={() => handlePopupChange(popup)}>
                     {icon}
-                </button>
-                <div className={`mobutton__hidden ${activeButton}`}>
-                    {inside}
-                    <button onClick={this.doVisible}> Close </button>
-                </div>
+                </button>}
             </div>
         )
     }

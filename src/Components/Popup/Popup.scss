@@ -7,7 +7,24 @@
         display: flex;
         position: absolute;
         z-index: 1;
-        background-color: crimson;
         width: 100%;
+        border-bottom: 1px solid;
+        top: 50px;
+    }
+
+    .popup__leftside {
+        width: 90%;
+    }
+    .popup__button--close {
+        border: none;
+        background-color: white;
+        width: 50px;
+    }
+
+    .popup__button--search {
+        border: none;
+        color: white;
+        background-color: green;
+        width: 50px;
     }
 }

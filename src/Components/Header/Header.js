@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
 import '../Header/Header.scss'
-import {logo, searchIcon, contactIcon, cartIcon, arrowDown, moreOptions} from '../Icons/Icons'
+import {logo, searchIcon, contactIcon, cartIcon, moreOptions} from '../Icons/Icons'
 import SearchInput from '../SearchInput/SearchInput';
 import MobileButton from '../MobileButton/MobileButton';
 import Popup from '../Popup/Popup';
+import MoreStyles from '../MoreStyles/MoreStyles';
 
 
 export default class Header extends Component {
@@ -22,7 +23,8 @@ export default class Header extends Component {
 
     closePopup = () => {
         this.setState({
-            isPopupActive: false
+            isPopupActive: false,
+            selectedPopupId: ''
         })
     }
 
@@ -50,17 +52,19 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <div className="header__right">
-                    <NavLink to="/"> Shag </NavLink>
-                    <NavLink to="/"> Contemporary </NavLink>
-                    <NavLink to="/"> More Styles {arrowDown} </NavLink>
-                    <NavLink to="/"> Sale </NavLink>
-                    <NavLink to="/products"> Shop All Rugs </NavLink>
+                    <div className="header__links">
+                        <NavLink to="/" className="header__navlink"> Shag </NavLink>
+                        <NavLink to="/" className="header__navlink"> Contemporary </NavLink>
+                        <MoreStyles />
+                        <NavLink to="/" className="header__navlink"> Sale </NavLink>
+                        <NavLink to="/products" className="header__navlink"> Shop All Rugs </NavLink>
+                    </div>
                     <MobileButton inside={<SearchInput />}
                                   icon={searchIcon}
                                   handlePopupChange={this.handlePopupChange}
                                   popup={'search'}
                                   />
-                    <button className="header__right--button">
+                    <button className="header__right--button" onClick={() => this.handlePopupChange('contact')}>
                         {contactIcon}
                     </button>
                     <button className="header__right--button">
@@ -69,6 +73,8 @@ export default class Header extends Component {
                     <MobileButton inside={moreOptionsButton}
                                   icon={moreOptions}
                                   handlePopupChange={this.handlePopupChange}
+                                  closePopup={this.closePopup}
+                                  selectedPopup={selectedPopupId}
                                   popup={'more options'}/>
                 </div>      
             </div>

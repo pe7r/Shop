@@ -5,7 +5,8 @@ FilterBox from '../FilterBox/FilterBox';
 
 export default class Filter extends Component {
     state = {
-        boxShow: false
+        boxShow: false,
+        boxChoice: []
     }
 
     showBox = () => {
@@ -14,12 +15,44 @@ export default class Filter extends Component {
         })
     }
 
+    handleBoxChoice = (id) => {
+        const { boxChoice } = this.state;
+        let newList = boxChoice;
+        console.log('boxChoice', boxChoice)
+        if (boxChoice.includes(id)){
+        const idx = newList.findIndex(item => item === id);
+        newList = [
+            ...boxChoice.slice(0, idx),
+            ...boxChoice.slice(idx + 1)
+        ]
+        } else if (!boxChoice.includes(id)) {
+        newList.push(id)
+        }
+        console.log('newList',newList)
+        this.setState({
+            boxChoice: newList
+        })
+    }
+
+    applyChanges = () => {
+        const {pushFilters, closeFilter, name} = this.props;
+        const {boxChoice} = this.state;
+        pushFilters(boxChoice, name)
+        closeFilter()
+    }
+
     render() {
-        const { filterData, chooseFilter, active, name, handleBoxChoose, applyChanges } = this.props;
+        const { 
+            filterData,
+            chooseFilter,
+            active,
+            name
+        } = this.props;
         const filterBox = filterData.map(filter => {
             return <FilterBox filter={filter}
                               key={filter.title}
-                              handleBoxChoose={handleBoxChoose}/>
+                              parent={name}
+                              handleBoxChoice={this.handleBoxChoice}/>
         })
         return (
             <div>
@@ -38,12 +71,10 @@ export default class Filter extends Component {
                             {filterBox}
                         </div>
                         <button className="box__button--apply"
-                           onClick={applyChanges}>
+                           onClick={this.applyChanges}>
                             Apply
                         </button>
-                    </div>
-                   
-                   
+                    </div>  
                 </div>
                 </div>
             </div>
