@@ -45,6 +45,20 @@ class App extends Component {
     window.scrollTo(0,0)
   }
 
+  onFilterProducts = (size, color, room, price, material, construction, style) => {
+    ServiceApi.getProductsList(1, size, color)
+    .then(response => {
+      this.setState({
+        products: response.data.result.data,
+        totalCount: response.data.result.total_count,
+        actualPage: 1
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   render() { 
     const { actualPage, totalCount, products } = this.state;
     return (
@@ -54,7 +68,8 @@ class App extends Component {
           <Route path='/products' render={() => <Products productsList={products} 
                                                           actualPage={actualPage}
                                                           totalCount={totalCount}
-                                                          changingPage={this.changingPage} />} />
+                                                          changingPage={this.changingPage}
+                                                          onFilterProducts={this.onFilterProducts} />} />
         </div>
       </BrowserRouter>
     );
