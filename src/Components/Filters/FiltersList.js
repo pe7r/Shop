@@ -26,9 +26,22 @@ export default class FiltersList extends Component {
   }
 
   pushFilters = (arr, filter) => {
+    let sizeFilter = [];
+    if (arr.length < 1) {
+      sizeFilter = ['runners']
+    } else if (filter === 'size') {
+      sizeFilter = arr;
+    }
+
+    let colorFilter = [];
+    if (filter === 'color') {
+      colorFilter = arr;
+    }
+
     this.setState({
       [filter]: arr
     })
+    this.props.onFilterProducts(sizeFilter, colorFilter)
   }
 
   closeFilter = () => {
@@ -48,7 +61,7 @@ export default class FiltersList extends Component {
     const buttons = Object.keys(filtersData).map((key) => {
       let active = '';
       if (key === setFilter) {
-        active = 'filter__box--active' 
+        active = 'filter__box-active' 
       }
       return <Filter key={key}
                      name={key}
@@ -58,6 +71,7 @@ export default class FiltersList extends Component {
                      active={active}
                      closeFilter={this.closeFilter}
                      pushFilters={this.pushFilters}
+                     callApiChange={this.callApiChange}
                      />
     });
 
