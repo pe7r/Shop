@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { actualPage, chosenFilters } = this.state;
+    const { actualPage } = this.state;
     ServiceApi.getProductsList(actualPage, [], [])
     .then(response => {
         this.setState({ 

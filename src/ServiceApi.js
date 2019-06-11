@@ -17,7 +17,7 @@ export default class ServiceApi {
 
     static async getProductsList(actualPage, allChosenFilters) {
         const { size, color, room, price, material, construction, style } = allChosenFilters;
-        console.log('allChosenFilters', allChosenFilters)
+
         const sizeFilter = this.changeFilterToApi(size, 'size').join('')
         const colorFilter = this.changeFilterToApi(color, 'color').join('')
         const roomFilter = this.changeFilterToApi(room, 'room').join('')
