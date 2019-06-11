@@ -10,11 +10,12 @@ class App extends Component {
   state = {
     products: [],
     actualPage: 1,
-    totalCount: 0
+    totalCount: 0,
+    chosenFilters: []
   }
 
   componentDidMount() {
-    const { actualPage } = this.state;
+    const { actualPage, chosenFilters } = this.state;
     ServiceApi.getProductsList(actualPage, [], [])
     .then(response => {
         this.setState({ 
@@ -25,14 +26,14 @@ class App extends Component {
   }
 
   changingPage = (cond) => {
-    const {actualPage} = this.state;
+    const {actualPage, chosenFilters} = this.state;
     let nextPage;
     if (cond === 'next') {
       nextPage = actualPage + 1
     } else if (cond === 'prev') {
       nextPage = actualPage - 1
     }
-    ServiceApi.getProductsList(nextPage)
+    ServiceApi.getProductsList(nextPage, chosenFilters)
           .then(response => {
             this.setState({
               products: response.data.result.data,
@@ -46,6 +47,9 @@ class App extends Component {
   }
 
   onFilterProducts = (allChosenFilters) => {
+    this.setState({
+      chosenFilters: allChosenFilters
+    })
     ServiceApi.getProductsList(1, allChosenFilters)
     .then(response => {
       this.setState({
