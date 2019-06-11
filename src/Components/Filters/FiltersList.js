@@ -25,23 +25,16 @@ export default class FiltersList extends Component {
     })
   }
 
-  pushFilters = (arr, filter) => {
-    let sizeFilter = [];
-    if (arr.length < 1) {
-      sizeFilter = ['runners']
-    } else if (filter === 'size') {
-      sizeFilter = arr;
-    }
+  pushFilters = (arrOfChosen, filterName) => {
+    const { size, color, room, price, material, construction, style } = this.state;
+    const allSelectedFilters = { size, color, room, price, material, construction, style };
 
-    let colorFilter = [];
-    if (filter === 'color') {
-      colorFilter = arr;
-    }
+    allSelectedFilters[filterName] = arrOfChosen;
 
     this.setState({
-      [filter]: arr
+      [filterName]: arrOfChosen
     })
-    this.props.onFilterProducts(sizeFilter, colorFilter)
+    this.props.onFilterProducts(allSelectedFilters)
   }
 
   closeFilter = () => {
