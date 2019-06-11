@@ -15,7 +15,7 @@ class App extends Component {
 
   componentDidMount() {
     const { actualPage } = this.state;
-    ServiceApi.getProductsList(actualPage)
+    ServiceApi.getProductsList(actualPage, [], [])
     .then(response => {
         this.setState({ 
           products: response.data.result.data,
@@ -45,8 +45,8 @@ class App extends Component {
     window.scrollTo(0,0)
   }
 
-  onFilterProducts = (size, color, room, price, material, construction, style) => {
-    ServiceApi.getProductsList(1, size, color)
+  onFilterProducts = (allChosenFilters) => {
+    ServiceApi.getProductsList(1, allChosenFilters)
     .then(response => {
       this.setState({
         products: response.data.result.data,
