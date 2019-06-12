@@ -113,6 +113,9 @@ const closeCross = <svg width="15" height="15" viewBox="0 0 14 14" fill="none" x
                   </svg>
 
 const closeCrossBlack = <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 14 14"><path fillRule="evenodd" clipRule="evenodd" d="M14 1.4L12.6 0L7 5.6L1.4 0L0 1.4L5.6 7L0 12.6L1.4 14L7 8.4L12.6 14L14 12.6L8.4 7L14 1.4Z" fill="black"></path></svg>
+
+const sortArrowDown = <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
+
 export { arrowDown,
          leftArrow,
          rightArrow,
@@ -122,4 +125,5 @@ export { arrowDown,
          cartIcon,
          moreOptions,
          closeCross,
-         closeCrossBlack }
+         closeCrossBlack,
+         sortArrowDown }
