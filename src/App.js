@@ -17,14 +17,15 @@ class App extends Component {
 
   componentDidMount() {
     const { actualPage } = this.state;
-    ServiceApi.getProductsList(actualPage, [], [])
-    .then(response => {
-        this.setState({ 
-          products: response.data.result.data,
-          totalCount: response.data.result.total_count,
-          isLoading: false
-         })
-    })
+    setTimeout(() => ServiceApi.getProductsList(actualPage, [], [])
+      .then(response => {
+          this.setState({ 
+            products: response.data.result.data,
+            totalCount: response.data.result.total_count,
+            isLoading: false
+          })
+      }),
+      1600)
   }
 
   changingPage = (cond) => {
@@ -38,17 +39,19 @@ class App extends Component {
     } else if (cond === 'prev') {
       nextPage = actualPage - 1
     }
-    ServiceApi.getProductsList(nextPage, chosenFilters)
-          .then(response => {
-            this.setState({
-              products: response.data.result.data,
-              actualPage: nextPage,
-              isLoading: false
-            })
-          })
-          .catch(error => {
-            console.log(error);
-          })
+    setTimeout(() => ServiceApi.getProductsList(nextPage, chosenFilters)
+      .then(response => {
+        this.setState({
+          products: response.data.result.data,
+          actualPage: nextPage,
+          isLoading: false
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      }),
+      1600)
+    
     window.scrollTo(0,0)
   }
 
@@ -57,18 +60,20 @@ class App extends Component {
       chosenFilters: allChosenFilters,
       isLoading: true
     })
-    ServiceApi.getProductsList(1, allChosenFilters)
-    .then(response => {
-      this.setState({
-        products: response.data.result.data,
-        totalCount: response.data.result.total_count,
-        actualPage: 1,
-        isLoading: false
+    setTimeout(() => ServiceApi.getProductsList(1, allChosenFilters)
+      .then(response => {
+        this.setState({
+          products: response.data.result.data,
+          totalCount: response.data.result.total_count,
+          actualPage: 1,
+          isLoading: false
+        })
       })
-    })
-    .catch(error => {
-      console.log(error);
-    })
+      .catch(error => {
+        console.log(error);
+      }),
+      1600)
+    
   }
 
   render() { 
