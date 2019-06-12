@@ -25,7 +25,7 @@ class App extends Component {
             isLoading: false
           })
       }),
-      1600)
+      1000)
   }
 
   changingPage = (cond) => {
@@ -50,7 +50,7 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       }),
-      1600)
+      1000)
     
     window.scrollTo(0,0)
   }
@@ -72,7 +72,7 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       }),
-      1600)
+      1000)
     
   }
 
