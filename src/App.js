@@ -11,7 +11,8 @@ class App extends Component {
     products: [],
     actualPage: 1,
     totalCount: 0,
-    chosenFilters: []
+    chosenFilters: [],
+    isLoading: true
   }
 
   componentDidMount() {
@@ -20,13 +21,17 @@ class App extends Component {
     .then(response => {
         this.setState({ 
           products: response.data.result.data,
-          totalCount: response.data.result.total_count
+          totalCount: response.data.result.total_count,
+          isLoading: false
          })
     })
   }
 
   changingPage = (cond) => {
     const {actualPage, chosenFilters} = this.state;
+    this.setState({
+      isLoading: true
+    })
     let nextPage;
     if (cond === 'next') {
       nextPage = actualPage + 1
@@ -37,7 +42,8 @@ class App extends Component {
           .then(response => {
             this.setState({
               products: response.data.result.data,
-              actualPage: nextPage
+              actualPage: nextPage,
+              isLoading: false
             })
           })
           .catch(error => {
@@ -48,14 +54,16 @@ class App extends Component {
 
   onFilterProducts = (allChosenFilters) => {
     this.setState({
-      chosenFilters: allChosenFilters
+      chosenFilters: allChosenFilters,
+      isLoading: true
     })
     ServiceApi.getProductsList(1, allChosenFilters)
     .then(response => {
       this.setState({
         products: response.data.result.data,
         totalCount: response.data.result.total_count,
-        actualPage: 1
+        actualPage: 1,
+        isLoading: false
       })
     })
     .catch(error => {
@@ -64,16 +72,18 @@ class App extends Component {
   }
 
   render() { 
-    const { actualPage, totalCount, products } = this.state;
+    const { actualPage, totalCount, products, isLoading } = this.state;
     return (
       <BrowserRouter>
         <div>
-          <Route exact path='/' render={() => <Homepage productsList={products} />} />
+          <Route exact path='/' render={() => <Homepage productsList={products}
+                                                        isLoading={isLoading} />} />
           <Route path='/products' render={() => <Products productsList={products} 
                                                           actualPage={actualPage}
                                                           totalCount={totalCount}
                                                           changingPage={this.changingPage}
-                                                          onFilterProducts={this.onFilterProducts} />} />
+                                                          onFilterProducts={this.onFilterProducts}
+                                                          isLoading={isLoading} />} />
         </div>
       </BrowserRouter>
     );

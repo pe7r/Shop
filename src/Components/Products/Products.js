@@ -5,10 +5,11 @@ import './Products.css'
 import FiltersList from '../Filters/FiltersList'
 import Pagination from '../Pagination/Pagination'
 import Header from '../Header/Header';
+import Loader from '../Loader/Loader'
 
 class Products extends React.Component {
     render() {
-        const { productsList, actualPage, totalCount, changingPage, onFilterProducts } = this.props;
+        const { productsList, actualPage, totalCount, changingPage, onFilterProducts, isLoading } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -33,17 +34,18 @@ class Products extends React.Component {
                         <FiltersList onFilterProducts={onFilterProducts}/>
                     </div>
                 </header>
-                 
-                <section className='products__content'>
-                    <div className="products__list">
-                        <div className="products__row">
-                            { productList }
+                 { isLoading ? <Loader /> :
+                    <section className='products__content'>
+                        <div className="products__list">
+                            <div className="products__row">
+                                { productList }
+                            </div>
                         </div>
-                    </div>
-                    <Pagination actualPage={actualPage}
-                                totalCount={totalCount}
-                                changingPage={changingPage}/>
-                </section>
+                        <Pagination actualPage={actualPage}
+                                    totalCount={totalCount}
+                                    changingPage={changingPage}/>
+                    </section>
+                }
             </div>
         )
     }
