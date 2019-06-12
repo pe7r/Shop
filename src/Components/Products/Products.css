@@ -1,9 +1,30 @@
 .products__content {
     display: flex;
-    justify-content: center;
+    max-width: 1320px;
+    margin: 0 auto;
     flex-direction: column;
     align-items: center;
     top: 65px;
+}
+
+.products-content__header {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    padding: 0 20px 20px;
+}
+
+.products-content-header__left {
+    width: 8%;
+    display: flex;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.products-content-header__right {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .products__list {

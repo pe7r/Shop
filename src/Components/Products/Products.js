@@ -6,6 +6,7 @@ import FiltersList from '../Filters/FiltersList'
 import Pagination from '../Pagination/Pagination'
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader'
+import Sort from '../Sort/Sort';
 
 class Products extends React.Component {
     render() {
@@ -35,16 +36,27 @@ class Products extends React.Component {
                     </div>
                 </header>
                  { isLoading ? <Loader /> :
-                    <section className='products__content'>
-                        <div className="products__list">
-                            <div className="products__row">
-                                { productList }
+                    <React.Fragment>
+                        <section className='products__content'>
+                            <div className="products-content__header">
+                                <div className="products-content-header__left">
+                                    {totalCount} Rugs
+                                </div>
+                                <div className="products-content-header__right">
+                                    <div className="content-heander__choosedfilters"> Choosed Filters </div>
+                                    <Sort />
+                                </div>
                             </div>
-                        </div>
-                        <Pagination actualPage={actualPage}
-                                    totalCount={totalCount}
-                                    changingPage={changingPage}/>
-                    </section>
+                            <div className="products__list">
+                                <div className="products__row">
+                                    { productList }
+                                </div>
+                            </div>
+                            <Pagination actualPage={actualPage}
+                                        totalCount={totalCount}
+                                        changingPage={changingPage}/>
+                        </section>
+                    </React.Fragment>
                 }
             </div>
         )
