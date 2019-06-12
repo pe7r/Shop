@@ -1,6 +1,42 @@
-.sort__container {
-}
-
 .sort__button {
     display: flex;
+    justify-content: space-around;
+    position: relative;
+    height: 30px;
+    min-width: 80px;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.sort__button--chosen {
+    background-color: #056551;
+    color: white;
+}
+
+.sort__hidden {
+    visibility: hidden;
+    position: absolute;
+}
+
+.sort__active {
+    visibility: visible;
+    z-index: 2;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-top: 15px;
+    right: 120px;
+    text-align: left;
+    font-size: 14px;
+    padding: 20px 20px 0;
+    color: #111111;
+    font-family: "GraphikMedium", Helvetica, Arial;
+}
+
+.sort__item {
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
 }

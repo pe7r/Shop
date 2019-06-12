@@ -10,7 +10,7 @@ import Sort from '../Sort/Sort';
 
 class Products extends React.Component {
     render() {
-        const { productsList, actualPage, totalCount, changingPage, onFilterProducts, isLoading } = this.props;
+        const { productsList, actualPage, totalCount, changingPage, onFilterProducts, isLoading, onSortProducts, actualSort } = this.props;
 
         const productList = productsList.map(product => 
         
@@ -32,7 +32,7 @@ class Products extends React.Component {
                 <header>
                     <Header />
                     <div className="products__filters">
-                        <FiltersList onFilterProducts={onFilterProducts}/>
+                        <FiltersList onFilterProducts={onFilterProducts} />
                     </div>
                 </header>
                  { isLoading ? <Loader /> :
@@ -44,7 +44,8 @@ class Products extends React.Component {
                                 </div>
                                 <div className="products-content-header__right">
                                     <div className="content-heander__choosedfilters"> Choosed Filters </div>
-                                    <Sort />
+                                    <Sort onSortProducts={onSortProducts}
+                                          actualSort={actualSort}/>
                                 </div>
                             </div>
                             <div className="products__list">

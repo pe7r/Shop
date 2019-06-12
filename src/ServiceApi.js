@@ -15,8 +15,14 @@ export default class ServiceApi {
         return filterArray
     }
 
-    static async getProductsList(actualPage, allChosenFilters) {
+    static async getProductsList(actualPage, allChosenFilters, chosenSort) {
         const { size, color, room, price, material, construction, style } = allChosenFilters;
+
+        let sortToApi = ``;
+        if (chosenSort.length >= 1) {
+            sortToApi = `sort=${chosenSort}&`;
+        }
+        
 
         const sizeFilter = this.changeFilterToApi(size, 'size').join('')
         const colorFilter = this.changeFilterToApi(color, 'color').join('')
@@ -29,7 +35,7 @@ export default class ServiceApi {
         const allFiltersApi = [sizeFilter, colorFilter, roomFilter, priceFilter, materialFilter, constructionFilter, styleFilter]
 
         const res = await axios.get(
-            `https://qa-api.wovenlyrugs.com/products?page=${actualPage}&page_size=12&group=Rug${allFiltersApi.join('')}`
+            `https://qa-api.wovenlyrugs.com/products?${sortToApi}page=${actualPage}&page_size=12&group=Rug${allFiltersApi.join('')}`
             )
         return res;
     }

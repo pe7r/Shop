@@ -12,7 +12,9 @@ class App extends Component {
     actualPage: 1,
     totalCount: 0,
     chosenFilters: [],
-    isLoading: true
+    chosenSort: '',
+    isLoading: true,
+    actualSort: 'Sort'
   }
 
   componentDidMount() {
@@ -29,7 +31,7 @@ class App extends Component {
   }
 
   changingPage = (cond) => {
-    const {actualPage, chosenFilters} = this.state;
+    const {actualPage, chosenFilters, chosenSort} = this.state;
     this.setState({
       isLoading: true
     })
@@ -39,7 +41,7 @@ class App extends Component {
     } else if (cond === 'prev') {
       nextPage = actualPage - 1
     }
-    setTimeout(() => ServiceApi.getProductsList(nextPage, chosenFilters)
+    setTimeout(() => ServiceApi.getProductsList(nextPage, chosenFilters, chosenSort)
       .then(response => {
         this.setState({
           products: response.data.result.data,
@@ -51,16 +53,16 @@ class App extends Component {
         console.log(error);
       }),
       1000)
-    
     window.scrollTo(0,0)
   }
 
   onFilterProducts = (allChosenFilters) => {
+    const {chosenSort} = this.state;
     this.setState({
       chosenFilters: allChosenFilters,
       isLoading: true
     })
-    setTimeout(() => ServiceApi.getProductsList(1, allChosenFilters)
+    setTimeout(() => ServiceApi.getProductsList(1, allChosenFilters, chosenSort)
       .then(response => {
         this.setState({
           products: response.data.result.data,
@@ -73,11 +75,31 @@ class App extends Component {
         console.log(error);
       }),
       1000)
-    
+  }
+
+  onSortProducts = (chosenSortId, chosenSortName) => {
+    const {chosenFilters} = this.state;
+    this.setState({
+      isLoading: true,
+      actualSort: chosenSortName
+    })
+    setTimeout(() => ServiceApi.getProductsList(1, chosenFilters, chosenSortId)
+      .then(response => {
+        this.setState({
+          products: response.data.result.data,
+          totalCount: response.data.result.total_count,
+          actualPage: 1,
+          isLoading: false
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      }),
+      1000)
   }
 
   render() { 
-    const { actualPage, totalCount, products, isLoading } = this.state;
+    const { actualPage, totalCount, products, isLoading, actualSort } = this.state;
     return (
       <BrowserRouter>
         <div>
@@ -88,7 +110,9 @@ class App extends Component {
                                                           totalCount={totalCount}
                                                           changingPage={this.changingPage}
                                                           onFilterProducts={this.onFilterProducts}
-                                                          isLoading={isLoading} />} />
+                                                          isLoading={isLoading}
+                                                          onSortProducts={this.onSortProducts}
+                                                          actualSort={actualSort} />} />
         </div>
       </BrowserRouter>
     );
