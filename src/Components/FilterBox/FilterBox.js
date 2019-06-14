@@ -2,34 +2,20 @@ import React, { Component } from 'react'
 import './FilterBox.scss'
 
 export default class FilterBox extends Component {
-  state = {
-    active: false
-  }
     render() {
         const {
           filter,
-          handleBoxChoice
+          handleBoxChoice,
+          boxActive
         } = this.props;
-        const {active} = this.state;
 
-        let styles;
-        if (active) {
-          styles = {
-            backgroundColor : 'green',
-            color: 'white'
-          }
-        }
         return (
             <div>
               <button
-                      className='box__button'
-                      style={styles}
-                      onClick={() => {
-                        this.setState(prevState => {
-                          return { active: !prevState.active }
-                        })
-                        handleBoxChoice(filter.title)
-                      }}
+                      className={`box__button ${boxActive}`}
+                      onClick={
+                        () => handleBoxChoice(filter.id)
+                      }
                       > {filter.title}
               </button>
             </div>

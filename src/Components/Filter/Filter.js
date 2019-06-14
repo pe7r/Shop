@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Filter.scss'
-import PropTypes from 'prop-types';import
-FilterBox from '../FilterBox/FilterBox';
+import PropTypes from 'prop-types';
+import FilterBox from '../FilterBox/FilterBox';
 
 export default class Filter extends Component {
     state = {
@@ -18,7 +18,6 @@ export default class Filter extends Component {
     handleBoxChoice = (id) => {
         const { boxChoice } = this.state;
         let newList = boxChoice;
-        console.log('boxChoice', boxChoice)
         if (boxChoice.includes(id)){
         const idx = newList.findIndex(item => item === id);
         newList = [
@@ -28,7 +27,6 @@ export default class Filter extends Component {
         } else if (!boxChoice.includes(id)) {
         newList.push(id)
         }
-        console.log('newList',newList)
         this.setState({
             boxChoice: newList
         })
@@ -41,6 +39,15 @@ export default class Filter extends Component {
         closeFilter()
     }
 
+    clearBoxChoice = () => {
+        const {pushFilters, closeFilter, name} = this.props;
+        this.setState({
+            boxChoice: []
+        })
+        pushFilters([], name)
+        closeFilter()
+    }
+
     render() {
         const { 
             filterData,
@@ -48,16 +55,24 @@ export default class Filter extends Component {
             active,
             name
         } = this.props;
+
+        const { boxChoice } = this.state;
+
         const filterBox = filterData.map(filter => {
+            let boxActive = '';
+            if (boxChoice.includes(filter.id)) {
+                boxActive = 'box__active'
+            }
             return <FilterBox filter={filter}
                               key={filter.title}
                               parent={name}
+                              boxActive={boxActive}
                               handleBoxChoice={this.handleBoxChoice}/>
         })
         return (
             <div>
                 <button 
-                    className="filter__button"
+                    className={`filter__button`}
                     onClick={() => {
                         this.showBox()
                         chooseFilter(name)
@@ -66,14 +81,24 @@ export default class Filter extends Component {
                 </button>
                 <div>
                 <div className={`filter__box ${active}`}>
-                    <div className="filter__box--container">
-                        <div className="filter__box--list">
+                    <div className="filter__box-container">
+                        <div className="filter__box-list">
                             {filterBox}
                         </div>
-                        <button className="box__button--apply"
-                           onClick={this.applyChanges}>
-                            Apply
-                        </button>
+                        <div className="filter__box-footer">
+                            {
+                                boxChoice.length >= 1 ? 
+                                <button className="box__button-clear"
+                                        onClick={this.clearBoxChoice}>
+                                    Clear
+                                </button> :
+                                null
+                            }
+                            <button className="box__button-apply"
+                                    onClick={this.applyChanges}>
+                                Apply
+                            </button>
+                        </div>
                     </div>  
                 </div>
                 </div>

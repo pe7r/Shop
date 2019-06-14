@@ -4,7 +4,7 @@ import './Loader.scss'
 export default class Loader extends Component {
     render() {
         return (
-            <div id="cube-loader">
+            <div id="cube-loader" style={{'padding': '80px'}}>
                 <div className="caption">
                 <div className="cube-loader">
                     <div className="cube loader-1"></div>

@@ -25,10 +25,16 @@ export default class FiltersList extends Component {
     })
   }
 
-  pushFilters = (arr, filter) => {
+  pushFilters = (arrOfChosen, filterName) => {
+    const { size, color, room, price, material, construction, style } = this.state;
+    const allSelectedFilters = { size, color, room, price, material, construction, style };
+
+    allSelectedFilters[filterName] = arrOfChosen;
+
     this.setState({
-      [filter]: arr
+      [filterName]: arrOfChosen
     })
+    this.props.onFilterProducts(allSelectedFilters)
   }
 
   closeFilter = () => {
@@ -48,7 +54,7 @@ export default class FiltersList extends Component {
     const buttons = Object.keys(filtersData).map((key) => {
       let active = '';
       if (key === setFilter) {
-        active = 'filter__box--active' 
+        active = 'filter__box-active' 
       }
       return <Filter key={key}
                      name={key}
@@ -58,6 +64,7 @@ export default class FiltersList extends Component {
                      active={active}
                      closeFilter={this.closeFilter}
                      pushFilters={this.pushFilters}
+                     callApiChange={this.callApiChange}
                      />
     });
 

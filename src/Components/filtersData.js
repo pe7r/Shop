@@ -41,7 +41,7 @@ export default {
             title: "Runners",
         },
         {
-            id: "roundsovals&squares",
+            id: "roundsovals%26squares",
             title: "Rounds, Ovals & Squares",
         }
     ],
@@ -161,7 +161,7 @@ export default {
             title: "Synthetics"
         },
         {
-            id: "jute & natural fibers",
+            id: "jute %26 natural fibers",
             title: "Jute & Natural Fibers"
         },
         {
@@ -241,7 +241,7 @@ export default {
             title: "Shag"
         },
         {
-            id: "boho&bohemian",
+            id: "boho%26bohemian",
             title: "Boho/Bohemian"
         },
         {
@@ -257,7 +257,7 @@ export default {
             title: "Updated Traditional"
         },
         {
-            id: "kilim&tribal",
+            id: "kilim%26tribal",
             title: "Kilim/Tribal"
         }
     ],

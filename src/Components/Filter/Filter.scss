@@ -5,7 +5,7 @@
     position: absolute;
 }
 
-.filter__box.filter__box--active {
+.filter__box.filter__box-active {
     width: 400px;
     background-color: white;
     margin-top: 10px;
@@ -20,7 +20,7 @@
     justify-content: space-between;
 }
 
-.filter__box--list {
+.filter__box-list {
     display: flex;
     flex-wrap: wrap;
 }
@@ -40,8 +40,26 @@
     background-color: white;
 }
 
-.box__button--apply {
+.filter__box-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.box__button-apply {
     width: 50px;
     height: 30px;
-    padding: 0 10px;
+    background-color: white;
+    border: none;
+    color: #056551;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.box__button-clear {
+    font-weight: bold;
+    color: #b3b3b3;
+    background-color: white;
+    border: none;
 }
