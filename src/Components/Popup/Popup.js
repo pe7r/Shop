@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Popup.scss';
 import SearchInput from '../SearchInput/SearchInput';
-import { closeCross, searchIcon } from '../Icons/Icons';
+import { closeCross, searchIconWhite } from '../Icons/Icons';
 import ContactPopup from '../ContactPopup/ContactPopup';
 import OptionsPopup from '../OptionsPopup/OptionsPopup';
 
@@ -24,7 +24,7 @@ export default class Popup extends Component {
             <div className={`popup__container ${active}`}>
                 {inside}
                 {inside === searchPopup ? <button onClick={closePopup} className="popup__button--close"> {closeCross} </button> : null}
-                {inside === searchPopup ? <button className="popup__button--search">{searchIcon}</button> : null}
+                {inside === searchPopup ? <button className="popup__button--search">{searchIconWhite}</button> : null}
             </div>
         )
     }
