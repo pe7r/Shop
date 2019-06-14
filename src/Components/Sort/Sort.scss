@@ -1,3 +1,7 @@
+.sort__container {
+    position: relative;
+}
+
 .sort__button {
     display: flex;
     justify-content: space-around;
@@ -21,13 +25,15 @@
 }
 
 .sort__active {
+    position: absolute;
+    width: 200px;
+    right: 0px;
     visibility: visible;
     z-index: 2;
     background-color: white;
     border: 1px solid;
     border-radius: 3px;
     margin-top: 15px;
-    right: 120px;
     text-align: left;
     font-size: 14px;
     padding: 20px 20px 0;
@@ -39,4 +45,27 @@
     font-weight: bold;
     margin-bottom: 20px;
     cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .sort__active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        max-height: 100vh;
+        border-radius: 0;
+        border: none;
+        z-index: 5;
+        margin-top: 0;
+    }
+
+    .sort__mobile-background {
+        background-color: rgba(0, 0, 0, 0.4);
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 6;
+    }
 }

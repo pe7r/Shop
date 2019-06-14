@@ -16,7 +16,7 @@ class SliderNew extends React.Component {
     }
 
     render() {
-        const { productsList } = this.props;
+        const { productsList, onSortProducts } = this.props;
 
         const productList = productsList.map(product => 
             
@@ -70,7 +70,11 @@ class SliderNew extends React.Component {
                     </div>
                     <div className="slider__switch">
                         <div className="slider__navlink">
-                            <NavLink to="/products" className="navlink"> See All </NavLink>
+                            <NavLink to="/products"
+                                     className="navlink"
+                                     onClick={() => onSortProducts('new_arrival', 'New Arrival')}
+                                     > See All 
+                            </NavLink>
                         </div>
                         <div className="slider__buttons">
                             <button onClick={this.previous} className="button-left"> {leftArrow} </button>

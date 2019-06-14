@@ -9,6 +9,8 @@ class App extends Component {
   
   state = {
     products: [],
+    popularProducts: [],
+    newProducts: [],
     actualPage: 1,
     totalCount: 0,
     chosenFilters: [],
@@ -19,11 +21,26 @@ class App extends Component {
 
   componentDidMount() {
     const { actualPage } = this.state;
-    setTimeout(() => ServiceApi.getProductsList(actualPage, [], [])
-      .then(response => {
+    setTimeout(() => 
+    ServiceApi.getPopularProducts()
+    .then(productsData => {
+      this.setState({
+        popularProducts: productsData.data.result.data
+      })
+    }),
+
+    ServiceApi.getNewProducts()
+    .then(productsData => {
+      this.setState({
+        newProducts: productsData.data.result.data
+      })
+    }),
+    
+    ServiceApi.getProductsList(actualPage, [], [])
+      .then(productsData => {
           this.setState({ 
-            products: response.data.result.data,
-            totalCount: response.data.result.total_count,
+            products: productsData.data.result.data,
+            totalCount: productsData.data.result.total_count,
             isLoading: false
           })
       }),
@@ -42,9 +59,9 @@ class App extends Component {
       nextPage = actualPage - 1
     }
     setTimeout(() => ServiceApi.getProductsList(nextPage, chosenFilters, chosenSort)
-      .then(response => {
+      .then(productsData => {
         this.setState({
-          products: response.data.result.data,
+          products: productsData.data.result.data,
           actualPage: nextPage,
           isLoading: false
         })
@@ -63,10 +80,10 @@ class App extends Component {
       isLoading: true
     })
     setTimeout(() => ServiceApi.getProductsList(1, allChosenFilters, chosenSort)
-      .then(response => {
+      .then(productsData => {
         this.setState({
-          products: response.data.result.data,
-          totalCount: response.data.result.total_count,
+          products: productsData.data.result.data,
+          totalCount: productsData.data.result.total_count,
           actualPage: 1,
           isLoading: false
         })
@@ -84,10 +101,11 @@ class App extends Component {
       actualSort: chosenSortName
     })
     setTimeout(() => ServiceApi.getProductsList(1, chosenFilters, chosenSortId)
-      .then(response => {
+      .then(productsData => {
         this.setState({
-          products: response.data.result.data,
-          totalCount: response.data.result.total_count,
+          products: productsData.data.result.data,
+          totalCount: productsData.data.result.total_count,
+          chosenSort: chosenSortId,
           actualPage: 1,
           isLoading: false
         })
@@ -99,12 +117,16 @@ class App extends Component {
   }
 
   render() { 
-    const { actualPage, totalCount, products, isLoading, actualSort } = this.state;
+    const { actualPage, totalCount, products, isLoading, actualSort, newProducts, popularProducts } = this.state;
     return (
       <BrowserRouter>
         <div>
           <Route exact path='/' render={() => <Homepage productsList={products}
-                                                        isLoading={isLoading} />} />
+                                                        isLoading={isLoading}
+                                                        popularProducts={popularProducts}
+                                                        newProducts={newProducts}
+                                                        onSortProducts={this.onSortProducts}
+                                                        onFilterProducts={this.onFilterProducts}/>} />
           <Route path='/products' render={() => <Products productsList={products} 
                                                           actualPage={actualPage}
                                                           totalCount={totalCount}

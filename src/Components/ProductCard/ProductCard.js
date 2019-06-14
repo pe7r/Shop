@@ -8,7 +8,7 @@ class ProductCard extends React.Component {
         theme: ''
     }
     state = {
-        colors: ['black', 'blue', 'brown','red', 'orange','yellow'],
+        colors: ['black', 'blue', 'brown','red', 'orange'],
         setColor: 'black'
     }
 

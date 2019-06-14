@@ -74,6 +74,7 @@ export default class Sort extends Component {
                     <div className="sort__list">
                         {sortsList}
                     </div>
+                    <div className="sort__mobile-background" onClick={this.handleSortClick}></div>
                 </div>
             </div>
         )

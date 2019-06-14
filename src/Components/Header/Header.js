@@ -29,7 +29,7 @@ export default class Header extends Component {
     }
 
     render() {
-        const { selectedPopupId, isPopupActive } = this.state;
+        const { selectedPopupId, isPopupActive, onFilterProducts } = this.state;
 
         const moreOptionsButton = (<button className="header__right--button header__hidden--button">
                                     {moreOptions}
@@ -57,7 +57,7 @@ export default class Header extends Component {
                         <NavLink to="/" className="header__navlink"> Contemporary </NavLink>
                         <MoreStyles />
                         <NavLink to="/" className="header__navlink"> Sale </NavLink>
-                        <NavLink to="/products" className="header__navlink"> Shop All Rugs </NavLink>
+                        <NavLink to="/products" className="header__navlink" onClick={() => onFilterProducts([])}> Shop All Rugs </NavLink>
                     </div>
                     <MobileButton inside={<SearchInput />}
                                   icon={searchIcon}
