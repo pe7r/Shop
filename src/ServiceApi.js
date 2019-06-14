@@ -39,4 +39,18 @@ export default class ServiceApi {
             )
         return res;
     }
+
+    static async getPopularProducts() {
+        const res = await axios.get(
+            `https://qa-api.wovenlyrugs.com/products?sort=bestseller&page=1&page_size=12&group=Rug`
+            )
+        return res;
+    }
+
+    static async getNewProducts() {
+        const res = await axios.get(
+            `https://qa-api.wovenlyrugs.com/products?sort=new_arrival&page=1&page_size=12&group=Rug`
+            )
+        return res;
+    }
 }
