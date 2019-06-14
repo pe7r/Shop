@@ -28,8 +28,7 @@ const Homepage = (props) => {
                             />
                         </div>
                     </div>      
-                }
-                            
+                }                
             </section>
     )
 }
