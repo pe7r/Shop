@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
 describe('Pagination HTML renders correctly', () => {
-    it('Pagionation with correct props', () => {
+    it('Pagionation check with correct props', () => {
         const output = shallow(
             <Pagination actualPage={1} totalCount={879} changingPage={() => {}}/>
         )
