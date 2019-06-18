@@ -1,12 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Pagination HTML renders correctly theme is an empty string 1`] = `
+exports[`Pagination HTML renders correctly Pagionation check with correct props 1`] = `
 <div
   className="pagination__container"
 >
   <button
     className="pagination__button button-left"
     disabled="disabled"
+    name="buttonPrev"
     onClick={[Function]}
   >
     <svg
@@ -32,6 +33,7 @@ exports[`Pagination HTML renders correctly theme is an empty string 1`] = `
   </div>
   <button
     className="pagination__button button-right"
+    name="buttonNext"
     onClick={[Function]}
   >
     <svg

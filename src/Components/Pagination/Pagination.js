@@ -22,6 +22,7 @@ export default class Pagination extends Component {
             <div className='pagination__container'>
                 <button onClick={() => changingPage('prev')}
                         disabled={disabledBack}
+                        name="buttonPrev"
                         className="pagination__button button-left">
                     {leftArrow}
                 </button>
@@ -29,6 +30,7 @@ export default class Pagination extends Component {
                     PAGE {actualPage} OF {pageCount}
                 </div>
                 <button onClick={() => changingPage('next')}
+                        name="buttonNext"
                         disabled={disabledForward}
                         className="pagination__button button-right">
                     {rightArrow}
