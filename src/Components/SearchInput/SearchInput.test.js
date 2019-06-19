@@ -9,7 +9,7 @@ describe('SearchInput', () => {
     describe('props works correctly', () => {
         it('theme is an empty string', () => {
             const output = shallow(
-                <SearchInput placeholder="Search" theme=''/>
+                <SearchInput placeholder='Search' theme=''/>
             )
             expect(shallowToJson(output)).toMatchSnapshot()
         })
