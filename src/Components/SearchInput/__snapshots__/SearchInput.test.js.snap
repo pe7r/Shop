@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput props works correctly theme is an empty string 1`] = `
+<input
+  className="search__input "
+  placeholder="Search"
+/>
+`;

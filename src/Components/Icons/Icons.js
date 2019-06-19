@@ -36,6 +36,8 @@ const searchIcon = <svg
                     />
                     </svg>
 
+const searchIconWhite = <svg class="input-addon__icon_1ef" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.6983 17.6984L13.8115 11.8116L13.6983 11.9248C16.1134 8.52862 15.3209 3.81164 11.9247 1.39655C8.52849 -1.01854 3.81151 -0.226091 1.39641 3.17013C-1.01868 6.56636 -0.226228 11.2833 3.17 13.6984C5.92471 15.6607 9.62283 15.5475 12.2643 13.4343L12.2266 13.472L18.0757 19.3211C18.5285 19.7739 19.2455 19.7362 19.6606 19.2833C20.1134 18.8305 20.1134 18.1513 19.6983 17.6984ZM7.54736 13.2079C4.41528 13.2079 1.88698 10.6796 1.88698 7.54749C1.88698 4.41542 4.45302 1.88712 7.54736 1.88712C10.6417 1.88712 13.2077 4.41542 13.2077 7.54749C13.2077 10.6796 10.6794 13.2079 7.54736 13.2079Z" fill="white"></path></svg>
+
 const logo = <svg
         width="122"
         height="30"
@@ -116,13 +118,14 @@ const closeCrossBlack = <svg xmlns="http://www.w3.org/2000/svg" height="15" widt
 
 const sortArrowDown = <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
 
-const sortArrowDownActive = <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></svg>
+const sortArrowDownActive = <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" fill="white"></path></svg>
 
 export { arrowDown,
          leftArrow,
          rightArrow,
          logo,
          searchIcon,
+         searchIconWhite,
          contactIcon,
          cartIcon,
          moreOptions,
