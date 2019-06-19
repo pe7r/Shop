@@ -7,11 +7,6 @@ global.shallow = shallow
 global.render = render
 global.mount = mount
 
-console.error = message => {
-    throw new Error(message)
-}
-
-
 //downcode fixes Slick Slider dependencies error mesage
 window.matchMedia = window.matchMedia || function() {
     return {
