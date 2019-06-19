@@ -73,6 +73,7 @@ export default class Filter extends Component {
             <div>
                 <button 
                     className={`filter__button`}
+                    name={name}
                     onClick={() => {
                         this.showBox()
                         chooseFilter(name)

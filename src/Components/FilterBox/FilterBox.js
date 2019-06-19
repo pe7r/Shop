@@ -6,6 +6,7 @@ const FilterBox = ({filter, handleBoxChoice, boxActive}) => {
       <div>
         <button
                 className={`box__button ${boxActive}`}
+                name={filter.id}
                 onClick={
                   () => handleBoxChoice(filter.id)
                 }
