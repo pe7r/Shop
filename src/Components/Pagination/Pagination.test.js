@@ -17,6 +17,7 @@ describe('Pagination HTML renders correctly', () => {
             <Pagination actualPage={1} totalCount={879} changingPage={spy}/>
         )
         output.find('[name="buttonNext"]').simulate('click');
+        expect(spy.mock.calls[0][0]).toBe('next')
         expect(spy.mock.calls.length).toBe(1)
     })
 
@@ -26,6 +27,7 @@ describe('Pagination HTML renders correctly', () => {
             <Pagination actualPage={2} totalCount={879} changingPage={spy}/>
         )
         output.find('[name="buttonPrev"]').simulate('click');
+        expect(spy.mock.calls[0][0]).toBe('prev')
         expect(spy.mock.calls.length).toBe(1)
     })
 })
