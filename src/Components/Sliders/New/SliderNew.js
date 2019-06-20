@@ -5,8 +5,12 @@ import ProductCard from '../../ProductCard/ProductCard';
 import Slider from "react-slick"
 import '../SliderStyles.scss';
 import { leftArrow, rightArrow } from '../../Icons/Icons'
+import ServiceApi from '../../../ServiceApi'
 
 class SliderNew extends React.Component {
+    state = {
+        newProducts: []
+    }
     next = () => {
         this.slider.slickNext();
     }
@@ -15,10 +19,20 @@ class SliderNew extends React.Component {
         this.slider.slickPrev();
     }
 
-    render() {
-        const { productsList, onSortProducts } = this.props;
+    componentDidMount() {
+        ServiceApi.getNewProducts()
+        .then(productsData => {
+          this.setState({
+            newProducts: productsData.data.result.data
+          })
+        })
+        }
 
-        const productList = productsList.map(product => 
+    render() {
+        const { onSortProducts } = this.props;
+        const { newProducts } = this.state;
+
+        const productList = newProducts.map(product => 
             
             <div className="slider__col" key={product.id}>
                 <ProductCard 
@@ -97,5 +111,5 @@ class SliderNew extends React.Component {
 export default SliderNew
 
 SliderNew.propTypes = {
-    productsList: PropTypes.array.isRequired,
+    onSortProducts: PropTypes.func.isRequired,
 };

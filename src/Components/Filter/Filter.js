@@ -53,7 +53,8 @@ export default class Filter extends Component {
             filterData,
             chooseFilter,
             active,
-            name
+            name,
+            hideFilters
         } = this.props;
 
         const { boxChoice } = this.state;
@@ -70,9 +71,10 @@ export default class Filter extends Component {
                               handleBoxChoice={this.handleBoxChoice}/>
         })
         return (
-            <div>
+            <div className={`filter__container${hideFilters}`}>
                 <button 
                     className={`filter__button`}
+                    name={name}
                     onClick={() => {
                         this.showBox()
                         chooseFilter(name)

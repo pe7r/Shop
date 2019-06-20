@@ -9,8 +9,6 @@ class App extends Component {
   
   state = {
     products: [],
-    popularProducts: [],
-    newProducts: [],
     actualPage: 1,
     totalCount: 0,
     chosenFilters: [],
@@ -22,20 +20,6 @@ class App extends Component {
   componentDidMount() {
     const { actualPage } = this.state;
     setTimeout(() => 
-    ServiceApi.getPopularProducts()
-    .then(productsData => {
-      this.setState({
-        popularProducts: productsData.data.result.data
-      })
-    }),
-
-    ServiceApi.getNewProducts()
-    .then(productsData => {
-      this.setState({
-        newProducts: productsData.data.result.data
-      })
-    }),
-    
     ServiceApi.getProductsList(actualPage, [], [])
       .then(productsData => {
           this.setState({ 
@@ -117,14 +101,11 @@ class App extends Component {
   }
 
   render() { 
-    const { actualPage, totalCount, products, isLoading, actualSort, newProducts, popularProducts } = this.state;
+    const { actualPage, totalCount, products, isLoading, actualSort } = this.state;
     return (
       <BrowserRouter>
         <div>
-          <Route exact path='/' render={() => <Homepage productsList={products}
-                                                        isLoading={isLoading}
-                                                        popularProducts={popularProducts}
-                                                        newProducts={newProducts}
+          <Route exact path='/' render={() => <Homepage isLoading={isLoading}
                                                         onSortProducts={this.onSortProducts}
                                                         onFilterProducts={this.onFilterProducts}/>} />
           <Route path='/products' render={() => <Products productsList={products} 

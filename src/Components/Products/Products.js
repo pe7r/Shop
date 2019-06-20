@@ -12,10 +12,11 @@ class Products extends React.Component {
     render() {
         const { productsList, actualPage, totalCount, changingPage, onFilterProducts, isLoading, onSortProducts, actualSort } = this.props;
 
-        const productList = productsList.map(product => 
-        
+        const productList = productsList.map(product => {
+            return (
             <div className="products__col" key={product.id}>
                 <ProductCard 
+                    placeInList={productsList.indexOf(product)}
                     title={product.title}
                     description={product.description}
                     key={product.id}
@@ -23,8 +24,8 @@ class Products extends React.Component {
                     price={product.pricing.label}
                     oldPrice={product.pricing.listPrice.amount}
                     /> 
-            </div>
-        
+            </div>)
+        }
             )
 
         return (
@@ -43,7 +44,12 @@ class Products extends React.Component {
                                     {totalCount} Rugs
                                 </div>
                                 <div className="products-content-header__right">
-                                    <div className="content-heander__choosedfilters"> Choosed Filters </div>
+                                    <div className="content-header__choosedfilters">
+                                        <button className="conten-header__clear-button"
+                                                onClick={() => onFilterProducts([])}>
+                                            Clear
+                                        </button>
+                                    </div>
                                     <Sort onSortProducts={onSortProducts}
                                           actualSort={actualSort}/>
                                 </div>

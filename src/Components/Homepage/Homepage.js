@@ -7,7 +7,7 @@ import Header from '../Header/Header'
 import Loader from '../Loader/Loader'
 
 const Homepage = (props) => {
-    const { isLoading, popularProducts, newProducts, onSortProducts, onFilterProducts } = props;
+    const { isLoading, onSortProducts, onFilterProducts } = props;
     return (
             <section className='homepage__container'>
                 <header>
@@ -17,13 +17,11 @@ const Homepage = (props) => {
                     <div className="homepage__content">
                         <div className="homepage__slider-popular__row">
                             <SliderPopular 
-                                productsList={popularProducts}
                                 onSortProducts={onSortProducts}
                             />
                         </div>
                         <div className="homepage__slider-new__row"> 
                             <SliderNew
-                                productsList={newProducts}
                                 onSortProducts={onSortProducts}
                             />
                         </div>
@@ -36,5 +34,7 @@ const Homepage = (props) => {
 export default Homepage
 
 Homepage.propTypes = {
-    productsList: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    onFilterProducts: PropTypes.func.isRequired,
+    onSortProducts: PropTypes.func.isRequired
 };

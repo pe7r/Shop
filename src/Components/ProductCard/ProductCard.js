@@ -19,7 +19,7 @@ class ProductCard extends React.Component {
     }
 
     render() {
-        const { theme, title, oldPrice, price, image} = this.props;
+        const { theme, title, oldPrice, price, image, placeInList} = this.props;
         const { colors, setColor } = this.state;
 
         const imgStyles = {
@@ -47,7 +47,7 @@ class ProductCard extends React.Component {
                     <div className="productcard__image" style={imgStyles}></div>
                 <div className="productcard__info">			
                     <div className="productcard__title">
-                        <span> <b>{ title }</b> </span>
+                        <span id={`product${placeInList}`}> { title } </span>
                     </div>
                     <div className="productcard__price">
                         <span> 

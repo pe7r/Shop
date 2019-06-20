@@ -1,8 +1,7 @@
 .filter__box {
     border: 1px solid #056551;
     border-radius: 3px;
-    visibility: hidden;
-    position: absolute;
+    display: none;
 }
 
 .filter__box.filter__box-active {
@@ -10,8 +9,9 @@
     background-color: white;
     margin-top: 10px;
     padding: 20px;
-    visibility: visible;
+    display: block;
     z-index: 1;
+    position: absolute;
 }
 
 .filter__box--container {
@@ -62,4 +62,10 @@
     color: #b3b3b3;
     background-color: white;
     border: none;
+}
+
+@media (max-width: 1100px) {
+    .filter__container--hideFilters {
+        display: none;
+    }
 }
