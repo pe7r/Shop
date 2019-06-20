@@ -34,5 +34,7 @@ const Homepage = (props) => {
 export default Homepage
 
 Homepage.propTypes = {
-    productsList: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
+    onFilterProducts: PropTypes.func.isRequired,
+    onSortProducts: PropTypes.func.isRequired
 };
