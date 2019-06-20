@@ -11,8 +11,8 @@ it('renders without crashing', () => {
 
 const puppeteer = require('puppeteer');
 
-describe('Products title', () => {
-  test('Title loads correctly', async () => {
+describe('E2E testing filters', () => {
+  test('Filters work correctly', async () => {
 	let browser = await puppeteer.launch({
 	  headless: false
 	});
