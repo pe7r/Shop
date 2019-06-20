@@ -1,8 +1,9 @@
 .filters__row {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     background-color: grey;
-    padding: 20px 110px;
+    padding: 20px;
 }
 
 .filters__box {
@@ -13,4 +14,25 @@
 
 .filters__box.active {
     display: block;
+}
+
+.filters__moreFilters-button {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .filters__moreFilters-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        height: 30px; 
+        border-radius: 5px;
+        border: 2px solid rgba(5, 101, 81, 0.4);
+        color: #056551;
+        font-weight: bold;
+        padding: 0 40px;
+        position: relative;
+        background-color: white;
+    }
 }

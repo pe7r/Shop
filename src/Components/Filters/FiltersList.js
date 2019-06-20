@@ -56,8 +56,15 @@ export default class FiltersList extends Component {
       if (key === setFilter) {
         active = 'filter__box-active' 
       }
+
+      let hideFilters = '';
+
+      if (Object.keys(filtersData).indexOf(key) >= 2) {
+        hideFilters = '--hideFilters'
+      }
       return <Filter key={key}
                      name={key}
+                     hideFilters={hideFilters}
                      filterData={filtersData[key]}
                      chooseFilter={this.chooseFilter}
                      boxShow={boxShow}
@@ -72,6 +79,9 @@ export default class FiltersList extends Component {
         <section className="filters__container">
           <div className="filters__row">
             {buttons}
+            <button className="filters__moreFilters-button">
+              More Filters
+            </button>
           </div>
           <ChoosedFilters choosedFilters={choosedFilters}
                           showFilterChoice={showFilterChoice}/>
