@@ -60,7 +60,7 @@ export default class Header extends Component {
                         <NavLink to="/products"
                                  className="header__navlink"
                                  onClick={() => onFilterProducts([])}
-                                 name="shopAllRugs"> Shop All Rugs </NavLink>
+                                 > Shop All Rugs </NavLink>
                     </div>
                     <MobileButton inside={<SearchInput />}
                                   icon={searchIcon}

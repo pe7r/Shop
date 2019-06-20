@@ -27,9 +27,8 @@ describe('Products title', () => {
 	});
 
   await page.goto('http://localhost:3000/');
-  await page.click('a[name=shopAllRugs]');
+  await page.click('a[href="/products"]');
   await page.waitForSelector('.products__content');
-  console.log(page._events);
 
   const firstCard = await page.$eval('#product0', e => e.innerHTML);
   expect(firstCard).toBe(' Brynn ');
