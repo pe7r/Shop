@@ -111,5 +111,5 @@ class SliderNew extends React.Component {
 export default SliderNew
 
 SliderNew.propTypes = {
-    productsList: PropTypes.array.isRequired,
+    onSortProducts: PropTypes.func.isRequired,
 };

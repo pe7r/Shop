@@ -118,5 +118,5 @@ class SliderPopular extends React.Component {
 export default SliderPopular
 
 SliderPopular.propTypes = {
-    productsList: PropTypes.array.isRequired,
+    onSortProducts: PropTypes.func.isRequired,
 };
