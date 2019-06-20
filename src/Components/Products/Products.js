@@ -44,7 +44,12 @@ class Products extends React.Component {
                                     {totalCount} Rugs
                                 </div>
                                 <div className="products-content-header__right">
-                                    <div className="content-heander__choosedfilters"> Choosed Filters </div>
+                                    <div className="content-header__choosedfilters">
+                                        <button className="conten-header__clear-button"
+                                                onClick={() => onFilterProducts([])}>
+                                            Clear
+                                        </button>
+                                    </div>
                                     <Sort onSortProducts={onSortProducts}
                                           actualSort={actualSort}/>
                                 </div>
