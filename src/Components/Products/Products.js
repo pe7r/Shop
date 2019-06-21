@@ -10,7 +10,15 @@ import Sort from '../Sort/Sort';
 
 class Products extends React.Component {
     render() {
-        const { productsList, actualPage, totalCount, changingPage, onFilterProducts, isLoading, onSortProducts, actualSort } = this.props;
+        const { productsList,
+                actualPage,
+                totalCount,
+                changingPage,
+                onFilterProducts,
+                isLoading,
+                onSortProducts,
+                actualSort, 
+                clearFilters} = this.props;
 
         const productList = productsList.map(product => {
             return (
@@ -46,8 +54,8 @@ class Products extends React.Component {
                                 <div className="products-content-header__right">
                                     <div className="content-header__choosedfilters">
                                         <button className="conten-header__clear-button"
-                                                onClick={() => onFilterProducts([])}>
-                                            Clear
+                                                onClick={clearFilters}>
+                                            Clear all
                                         </button>
                                     </div>
                                     <Sort onSortProducts={onSortProducts}

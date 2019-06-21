@@ -74,6 +74,22 @@ class App extends Component {
       })
   }
 
+  clearFilters = () => {
+    ServiceApi.getProductsList(1, [], 'sort')
+    .then(productsData => {
+      this.setState({
+        products: productsData.data.result.data,
+        totalCount: productsData.data.result.total_count,
+        actualPage: 1,
+        isLoading: false,
+        chosenFilters: []
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   onSortProducts = (chosenSortId, chosenSortName) => {
     const {chosenFilters} = this.state;
     this.setState({
@@ -110,7 +126,8 @@ class App extends Component {
                                                           onFilterProducts={this.onFilterProducts}
                                                           isLoading={isLoading}
                                                           onSortProducts={this.onSortProducts}
-                                                          actualSort={actualSort} />} />
+                                                          actualSort={actualSort}
+                                                          clearFilters={this.clearFilters} />} />
         </div>
       </BrowserRouter>
     );
