@@ -18,8 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const { actualPage } = this.state;
-    setTimeout(() => 
+    const { actualPage } = this.state; 
     ServiceApi.getProductsList(actualPage, [], [])
       .then(productsData => {
           this.setState({ 
@@ -27,8 +26,7 @@ class App extends Component {
             totalCount: productsData.data.result.total_count,
             isLoading: false
           })
-      }),
-      1000)
+      })
   }
 
   changingPage = (cond) => {
@@ -42,7 +40,7 @@ class App extends Component {
     } else if (cond === 'prev') {
       nextPage = actualPage - 1
     }
-    setTimeout(() => ServiceApi.getProductsList(nextPage, chosenFilters, chosenSort)
+    ServiceApi.getProductsList(nextPage, chosenFilters, chosenSort)
       .then(productsData => {
         this.setState({
           products: productsData.data.result.data,
@@ -52,8 +50,7 @@ class App extends Component {
       })
       .catch(error => {
         console.log(error);
-      }),
-      1000)
+      })
     window.scrollTo(0,0)
   }
 
@@ -63,7 +60,7 @@ class App extends Component {
       chosenFilters: allChosenFilters,
       isLoading: true
     })
-    setTimeout(() => ServiceApi.getProductsList(1, allChosenFilters, chosenSort)
+    ServiceApi.getProductsList(1, allChosenFilters, chosenSort)
       .then(productsData => {
         this.setState({
           products: productsData.data.result.data,
@@ -74,8 +71,7 @@ class App extends Component {
       })
       .catch(error => {
         console.log(error);
-      }),
-      1000)
+      })
   }
 
   onSortProducts = (chosenSortId, chosenSortName) => {
@@ -84,20 +80,19 @@ class App extends Component {
       isLoading: true,
       actualSort: chosenSortName
     })
-    setTimeout(() => ServiceApi.getProductsList(1, chosenFilters, chosenSortId)
-      .then(productsData => {
-        this.setState({
-          products: productsData.data.result.data,
-          totalCount: productsData.data.result.total_count,
-          chosenSort: chosenSortId,
-          actualPage: 1,
-          isLoading: false
-        })
+    ServiceApi.getProductsList(1, chosenFilters, chosenSortId)
+    .then(productsData => {
+      this.setState({
+        products: productsData.data.result.data,
+        totalCount: productsData.data.result.total_count,
+        chosenSort: chosenSortId,
+        actualPage: 1,
+        isLoading: false
       })
-      .catch(error => {
-        console.log(error);
-      }),
-      1000)
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 
   render() { 
