@@ -11,12 +11,12 @@ it('renders without crashing', () => {
 
 const puppeteer = require('puppeteer');
 
-describe('E2E testing filters', () => {
-  test('Page products renders correctly', async () => {
-	let browser = await puppeteer.launch({
+const openProductsPage = async () => {
+  let browser = await puppeteer.launch({
 	  headless: false
-	});
-	let page = await browser.newPage();
+  });
+
+  let page = await browser.newPage();
 
 	page.emulate({
 	  viewport: {
@@ -24,37 +24,33 @@ describe('E2E testing filters', () => {
 		height: 600
 	  },
 	  userAgent: ''
-	});
+  });
 
   await page.goto('http://localhost:3000/');
   await page.click('a[href="/products"]');
   await page.waitForSelector('.products__content');
 
-  const firstCard = await page.$eval('#product0', e => e.innerHTML);
-  expect(firstCard).toBe(' Brynn ');
-  
-  const thirdCard = await page.$eval('#product2', e => e.innerHTML);
-  expect(thirdCard).toBe(' Shiv ');
-	browser.close();
+  return [browser, page];
+}
+
+describe('E2E testing filters', () => {
+  test('Page products renders correctly', async () => {
+    let chromium = await openProductsPage();
+    let browser = chromium[0];
+    let page = chromium[1];
+
+    const firstCard = await page.$eval('#product0', e => e.innerHTML);
+    expect(firstCard).toBe(' Brynn ');
+    
+    const thirdCard = await page.$eval('#product2', e => e.innerHTML);
+    expect(thirdCard).toBe(' Shiv ');
+    browser.close();
   }, 50000);
 
   test('Filters choice works correctly', async () => {
-    let browser = await puppeteer.launch({
-      headless: false
-    });
-    let page = await browser.newPage();
-  
-    page.emulate({
-      viewport: {
-      width: 1200,
-      height: 600
-      },
-      userAgent: ''
-    });
-  
-    await page.goto('http://localhost:3000/');
-    await page.click('a[href="/products"]');
-    await page.waitForSelector('.products__content');
+    let chromium = await openProductsPage();
+    let browser = chromium[0];
+    let page = chromium[1];
   
     const firstCard = await page.$eval('#product0', e => e.innerHTML);
     expect(firstCard).toBe(' Brynn ');
