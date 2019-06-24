@@ -1,8 +1,10 @@
 .slider__content {
     display: flex;
+    width: 100%;
+    min-height: 200px;
     justify-content: center;
     flex-direction: column;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
 }
 

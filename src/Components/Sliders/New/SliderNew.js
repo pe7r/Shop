@@ -32,8 +32,7 @@ class SliderNew extends React.Component {
         const { onSortProducts } = this.props;
         const { newProducts } = this.state;
 
-        const productList = newProducts.map(product => 
-            
+        const productList = newProducts.map(product =>  
             <div className="slider__col" key={product.id}>
                 <ProductCard 
                     title={product.title}
@@ -45,7 +44,6 @@ class SliderNew extends React.Component {
                     theme='new'
                     /> 
             </div>
-        
             )
 
             const settings = {
