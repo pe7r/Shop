@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types';
 import ProductCard from '../ProductCard/ProductCard'
 import './Products.css'
-import FiltersList from '../Filters/FiltersList'
+import FiltersList from '../FiltersList/FiltersList'
 import Pagination from '../Pagination/Pagination'
 import Header from '../Header/Header';
 import Loader from '../Loader/Loader'

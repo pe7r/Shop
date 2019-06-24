@@ -1,5 +1,5 @@
 export default {
-    size: [
+    Size: [
         {
             id: "2x3",
             title: "2' X 3'",
@@ -45,7 +45,7 @@ export default {
             title: "Rounds, Ovals & Squares",
         }
     ],
-    color: [
+    Color: [
         {
             id: "blue",
             title: "Blue"
@@ -99,7 +99,7 @@ export default {
             title: "Purple"
         },
     ],
-    room: [
+    Room: [
         {
             id: "bedroom",
             title: "Bedroom"
@@ -137,7 +137,7 @@ export default {
             title: "Office"
         },
     ],
-    price: [
+    Price: [
         {
             id: "from0to100",
             title: "$0-100",
@@ -155,7 +155,7 @@ export default {
             title: "$701 & above",
         },
     ],
-    material: [
+    Material: [
         {
             id: "synthetics",
             title: "Synthetics"
@@ -177,7 +177,7 @@ export default {
             title: "Cotton"
         },
     ],
-    construction: [
+    Construction: [
         {
             id: "machine made",
             title: "Machine Made"
@@ -211,7 +211,7 @@ export default {
             title: "Hand Loomed"
         },
     ],
-    style: [
+    Style: [
         {
             id: "casual",
             title: "Casual"
